@@ -26,8 +26,8 @@ git_bundles = [
 vim_org_scripts = [
   ["IndexedSearch", "7062",  "plugin"],
   ["gist",          "12732", "plugin"],
-  ["python",        "790", "plugin"],
-  ["project",        "69", "plugin"],
+  ["python",        "14268", "plugin"],
+  ["project",        "6273", "plugin"],
   ["jquery",        "12107", "syntax"],
 ]
 
