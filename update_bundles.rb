@@ -1,5 +1,8 @@
 #!/usr/bin/env ruby
 
+# thank you tammer saleh, adapted from
+# http://tammersaleh.com/posts/the-modern-vim-config-with-pathogen
+
 git_bundles = [ 
   "git://github.com/astashov/vim-ruby-debugger.git",
   "git://github.com/hallison/vim-rdoc.git",
