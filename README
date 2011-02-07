@@ -1,12 +1,16 @@
-Setup with pathogen, a few colorschemes I like, and a small suite of plugins I find useful
+Vim setup with
+- pathogen
+- few color schemes I like
+- small suite of plugins
 
-## Utilities
 update_bundles.rb is a small script that will help you move to pathogen.vim
 
-## Credit
+Install
+-------
+ln -s ~/.vim/vimrc ~/.vimrc
+
+Credit
+------
 vimrc heavily influenced by 
 https://github.com/rtomayko/dotfiles/blob/rtomayko/.vimrc
-
-## Install
-ln -s ~/.vim/vimrc ~/.vimrc
 
