@@ -41,10 +41,6 @@ endif
 "highlight StatusLineNC    ctermfg=Black ctermbg=DarkGrey cterm=bold
 "highlight StatusLine      ctermbg=Black ctermfg=LightGrey
 
-"   Highlight Trailing Whitespace
-" ----------------------------------------------------------------------------
-
-set list listchars=trail:.,tab:>.
 highlight SpecialKey ctermfg=DarkGray ctermbg=Black
 
 "  Backups
@@ -102,6 +98,21 @@ set nosmarttab             " fuck tabs
 set formatoptions+=n       " support for numbered/bullet lists
 set textwidth=80           " wrap at 80 chars by default
 set virtualedit=block      " allow virtual edit in visual block ..
+" highlight trailing whitespace as '.' and tabs as '>'
+set list listchars=trail:.,tab:>.
+
+" ---------------------------------------------------------------------------
+" mappings
+" ---------------------------------------------------------------------------
+let mapleader = ';'
+
+map <Leader>q <Esc>:x<CR>
+nmap <Leader>t :ConqueTermSplit bash<CR>:set list!<CR>
+imap <Leader>; <Esc>
+
+" writing files
+nmap <Leader>w :w<CR>
+imap <Leader>w <C-o>:w<CR>
 
 
 " Filetypes
@@ -127,17 +138,3 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 "improve autocomplete menu color
 highlight Pmenu ctermbg=238 gui=bold
 
-" ---------------------------------------------------------------------------
-" mappings
-" ---------------------------------------------------------------------------
-"inoremap <C-S> <C-O>:w<cr>
-"imap <C-w> <C-O>:w<CR>
-map <C-q> <Esc>:x<CR>
-
-" ---------------------------------------------------------------------------
-" old shit
-" ---------------------------------------------------------------------------
-"set autoindent
-"set expandtab
-"set smarttab
-"set sw=2
