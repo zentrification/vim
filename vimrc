@@ -106,14 +106,36 @@ set list listchars=trail:.,tab:>.
 " ---------------------------------------------------------------------------
 let mapleader = ';'
 
-map <Leader>q <Esc>:x<CR>
-nmap <Leader>t :ConqueTermSplit bash<CR>:set list!<CR>
 imap <Leader>; <Esc>
+map <Leader>q <Esc>:x<CR>
+map <Leader>xml :%!ruby ~/bin/xmlformat.rb<CR>
+nmap <Leader>t :ConqueTermSplit bash<CR>:set list!<CR>
+
+" quitting
+nmap <Leader>q :q<CR>
+nmap <Leader>Q :q!<CR>
 
 " writing files
 nmap <Leader>w :w<CR>
-imap <Leader>w <C-o>:w<CR>
+imap <Leader>w <C-o>:w<CR><Esc>
+nmap <Leader>x :x<CR>
+imap <Leader>x <C-o>:x<CR>
 
+" sane window split movements
+nmap <C-n> <C-w>n
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-h> <C-w>h
+nmap <C-l> <C-w>l
+nmap <Leader>se :Se.<CR>
+
+" rails.vim
+imap <Leader>rc <Esc>:Rcontroller 
+nmap <Leader>rc :Rcontroller 
+imap <Leader>rm <Esc>:Rmodel 
+nmap <Leader>rm :Rmodel 
+imap <Leader>rv <Esc>:Rview 
+nmap <Leader>rv :Rview 
 
 " Filetypes
 " ----------------------------------------------------------------------------
