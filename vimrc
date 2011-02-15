@@ -113,6 +113,7 @@ nmap <Leader>t :ConqueTermSplit bash<CR>:set list!<CR>
 
 " quitting
 nmap <Leader>q :q<CR>
+nmap <Leader>qa :qa<CR>
 nmap <Leader>Q :q!<CR>
 
 " writing files
@@ -128,12 +129,19 @@ nmap <C-k> <C-w>k
 nmap <C-h> <C-w>h
 nmap <C-l> <C-w>l
 nmap <Leader>se :Se.<CR>
+nmap <Leader>wm <C-w>_
+" going back and forth mimizes project.vim
+nmap <Leader>wn <C-w>=<C-w>h<C-w>l 
 
 " rails.vim
 imap <Leader>rc <Esc>:Rcontroller 
 nmap <Leader>rc :Rcontroller 
+imap <Leader>rj <Esc>:Rjavascript 
+nmap <Leader>rj :Rjavascript 
 imap <Leader>rm <Esc>:Rmodel 
 nmap <Leader>rm :Rmodel 
+imap <Leader>rs <Esc>:Rstylesheet 
+nmap <Leader>rs :Rstylesheet 
 imap <Leader>rv <Esc>:Rview 
 nmap <Leader>rv :Rview 
 
