@@ -16,6 +16,7 @@ set viminfo='1000,f1,:100,@100,/20
 set modeline                          " make sure modeline support is enabled
 set autoread                          " reload files (no local changes only)
 set tabpagemax=50                     " open 50 tabs max
+set hidden                            " marks & history remembered in backgrounded buffers
 
 " Colors / Theme
 " ---------------------------------------------------------------------------
@@ -36,10 +37,9 @@ endif
 
 "  Highlight
 " ---------------------------------------------------------------------------
-
-"highlight Comment         ctermfg=DarkGrey guifg=#444444
-"highlight StatusLineNC    ctermfg=Black ctermbg=DarkGrey cterm=bold
-"highlight StatusLine      ctermbg=Black ctermfg=LightGrey
+highlight Comment         ctermfg=DarkGrey guifg=#444444
+highlight StatusLineNC    ctermfg=Black ctermbg=DarkGrey cterm=bold
+highlight StatusLine      ctermbg=Black ctermfg=LightGrey
 
 highlight SpecialKey ctermfg=DarkGray ctermbg=Black
 
@@ -69,6 +69,7 @@ set whichwrap+=<,>,h,l,[,] " backspace and cursor keys wrap to
 set shortmess=filtIoOA     " shorten messages
 "set report=0               " tell us about changes
 set nostartofline          " don't jump to the start of line when scrolling
+set scrolloff=5            " move top/bottom of viewport with cursor
 
 " Visual Cues
 " ----------------------------------------------------------------------------
@@ -107,9 +108,13 @@ set list listchars=trail:.,tab:>.
 let mapleader = ';'
 
 imap <Leader>; <Esc>
-map <Leader>q <Esc>:x<CR>
 map <Leader>xml :%!ruby ~/bin/xmlformat.rb<CR>
+nmap <Leader>r :!!<CR>
 nmap <Leader>t :ConqueTermSplit bash<CR>:set list!<CR>
+
+" search
+imap <Leader>s <Esc>:%s/
+nmap <Leader>s :%s/
 
 " quitting
 nmap <Leader>q :q<CR>
@@ -122,6 +127,10 @@ imap <Leader>w <C-o>:w<CR><Esc>
 nmap <Leader>x :x<CR>
 imap <Leader>x <C-o>:x<CR>
 
+" scroll the viewport faster
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
+
 " sane window split movements
 nmap <C-n> <C-w>n
 nmap <C-j> <C-w>j
@@ -131,7 +140,7 @@ nmap <C-l> <C-w>l
 nmap <Leader>se :Se.<CR>
 nmap <Leader>wm <C-w>_
 " going back and forth mimizes project.vim
-nmap <Leader>wn <C-w>=<C-w>h<C-w>l 
+nmap <Leader>wn <C-w>=<C-w>h<C-w>l
 
 " rails.vim
 imap <Leader>rc <Esc>:Rcontroller 
