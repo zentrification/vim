@@ -168,6 +168,7 @@ nmap <Leader>rs :Rstylesheet
 imap <Leader>rv <Esc>:Rview 
 nmap <Leader>rv :Rview 
 
+
 " Filetypes
 " ----------------------------------------------------------------------------
 au BufRead,BufNewFile *.txt       set ft=txt
