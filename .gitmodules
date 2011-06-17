@@ -58,3 +58,6 @@
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = https://github.com/scrooloose/syntastic/
+[submodule "bundle/vim-slim"]
+	path = bundle/vim-slim
+	url = git://github.com/zentrification/vim-slim.git
