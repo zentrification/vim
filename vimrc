@@ -1,7 +1,9 @@
 " setup pathogen
 " ---------------------------------------------------------------------------
-call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+filetype off
+syntax on
 
 " General
 " ---------------------------------------------------------------------------
@@ -113,6 +115,8 @@ imap <Leader>; <Esc>
 map <Leader>sh :sh<CR>
 map <Leader>xml :%!ruby ~/bin/xmlformat.rb<CR>
 nmap <Leader>r :!!<CR>
+nmap <Leader>sn :set invnumber<CR>
+nmap <Leader>sp :set invpaste paste?<CR>
 " nmap <Leader>t :ConqueTermSplit bash<CR>:set list!<CR>
 
 " search
