@@ -26,6 +26,34 @@ git_bundles = [
   "git://github.com/vim-ruby/vim-ruby.git",
 ]
 
+# from the remake
+git_bundles = [ 
+  #'https://github.com/astashov/vim-ruby-debugger.git',
+  #'https://github.com/hallison/vim-rdoc.git',
+  #'https://github.com/msanders/snipmate.vim.git',
+  #'https://github.com/tpope/vim-fugitive.git',
+  #'https://github.com/tpope/vim-git.git',
+  #'https://github.com/tpope/vim-haml.git',
+  #'https://github.com/tpope/vim-markdown.git',
+  #'https://github.com/tsaleh/vim-align.git',
+  #'https://github.com/tsaleh/vim-matchit.git',
+  #'https://github.com/tsaleh/vim-supertab.git',
+  #'https://github.com/vim-ruby/vim-ruby.git',
+  #'https://github.com/rson/vim-conque.git',
+  #'https://github.com/scrooloose/syntastic/',
+  #'https://github.com/zentrification/vim-slim.git'
+  # already installed
+  'https://github.com/bbommarito/vim-slim.git',
+  # breaking vim.slim
+  #'https://github.com/altercation/vim-colors-solarized.git',
+  'https://github.com/tpope/vim-vividchalk.git',
+  #'https://github.com/tpope/vim-repeat.git',
+  'https://github.com/kchmck/vim-coffee-script.git',
+  'https://github.com/tpope/vim-rails.git',
+  'https://github.com/tpope/vim-surround.git',
+  'https://github.com/tsaleh/vim-tcomment.git'
+]
+
 vim_org_scripts = [
   ["IndexedSearch", "7062",  "plugin"],
   ["gist",          "12732", "plugin"],
@@ -33,6 +61,7 @@ vim_org_scripts = [
   ["project",        "6273", "plugin"],
   ["jquery",        "12107", "syntax"],
 ]
+vim_org_scripts = []
 
 require 'fileutils'
 require 'open-uri'
