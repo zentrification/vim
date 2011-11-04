@@ -30,7 +30,7 @@ if $TERM =~ 'xterm-256color'
   set t_Co=256
   " colorscheme ir_black
   set background=dark
-  colorscheme solarized
+  " colorscheme solarized
 endif
 if has("macunix")
   let s:uname = system("uname")
@@ -151,6 +151,7 @@ nmap <Leader>wm <C-w>_
 nmap <Leader>wn <C-w>=<C-w>h<C-w>l
 
 " tabs
+map <Leader>tba <C-o>:tab ball<CR>
 imap <Leader>tn <C-o>:tabnew<CR>
 nmap <Leader>tn :tabnew<CR>
 nnoremap <C-Left> :tabprevious<CR>
@@ -171,6 +172,10 @@ imap <Leader>rs <Esc>:Rstylesheet
 nmap <Leader>rs :Rstylesheet 
 imap <Leader>rv <Esc>:Rview 
 nmap <Leader>rv :Rview 
+
+" coffeescript
+imap <Leader>cm <Esc>:CoffeeMake<CR>
+nmap <Leader>cm :CoffeeMake<CR>
 
 
 " Filetypes
