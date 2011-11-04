@@ -1,9 +1,50 @@
-" setup pathogen
+" setup vundle
 " ---------------------------------------------------------------------------
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-filetype off
-syntax on
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+
+" github repos
+""""""""""""""
+" Bundle 'tpope/vim-fugitive'
+" Bundle 'Lokaltog/vim-easymotion'
+" Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+""""""""""""""""""""""""""""""""""""""""""""
+" Bundle 'astashov/vim-ruby-debugger'
+" Bundle 'altercation/vim-colors-solarized'
+Bundle 'bbommarito/vim-slim'
+" Bundle 'hallison/vim-rdoc'
+Bundle 'kchmck/vim-coffee-script'
+" Bundle 'msanders/snipmate.vim'
+" Bundle 'rson/vim-conque'
+" Bundle 'scrooloose/syntastic/'
+Bundle 'tpope/vim-vividchalk'
+" Bundle 'tpope/vim-repeat'
+" Bundle 'tpope/vim-five.git'
+" Bundle 'tpope/vim.git'
+" Bundle 'tpope/vim-haml'
+" Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-surround'
+Bundle 'tsaleh/vim-tcomment'
+" Bundle 'tsaleh/vim-align'
+" Bundle 'tsaleh/vim-matchit'
+" Bundle 'tsaleh/vim-supertab'
+" Bundle 'vim-ruby/vim-ruby'
+" Bundle 'zentrification/vim-slim'
+" vim-scripts repos
+"""""""""""""""""""
+" Bundle 'L9'
+" Bundle 'FuzzyFinder'
+" Bundle 'rails.vim'
+" non github repos
+""""""""""""""""""
+" Bundle 'git://git.wincent.com/command-t.git'
 
 " General
 " ---------------------------------------------------------------------------
@@ -12,7 +53,7 @@ set nocompatible                      " essential
 set history=1000                      " lots of command line history
 set cf                                " error files / jumping
 set ffs=unix,dos,mac                  " use correct line terminators
-filetype plugin indent on             " enable indenting 
+filetype plugin indent on             " enable indenting (required for Vundle)
 set isk+=_,$,@,%,#,-                  " none word dividers
 set viminfo='1000,f1,:100,@100,/20
 set modeline                          " make sure modeline support is enabled
