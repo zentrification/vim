@@ -4,11 +4,11 @@ Vim setup with
 
 Install
 -------
-tar cfz ~/.vimbackup.tgz ~/.vim ~/.vimrc
-rm ~/.vim ~/.vimrc
-git clone git://github.com/zentrification/vim.git ~/.vim
-ln -s ~/.vim/vimrc ~/.vimrc
-cd ~/.vim && git submodule init && git submodule update
+bash< <(curl -s https://raw.github.com/zentrification/vim/master/installer)
+or
+clone, cd into repo, git submodule init && git submodule update
+move repo to ~/.vim, symlink ~/.vim/vimrc to ~/.vimrc
+launch vim, execute the command BundleInstall
 
 Credit
 ------
