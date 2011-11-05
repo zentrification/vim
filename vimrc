@@ -48,7 +48,6 @@ Bundle 'tsaleh/vim-tcomment'
 " General
 " ---------------------------------------------------------------------------
 
-set nocompatible                      " essential
 set history=1000                      " lots of command line history
 set cf                                " error files / jumping
 set ffs=unix,dos,mac                  " use correct line terminators
