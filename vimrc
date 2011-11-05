@@ -10,6 +10,8 @@ Bundle 'gmarik/vundle'
 
 " language specific
 Bundle 'kchmck/vim-coffee-script'
+" add end keyword in ruby
+Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-haml'
 Bundle 'groenewege/vim-less'
 Bundle 'pangloss/vim-javascript'
@@ -20,8 +22,12 @@ Bundle 'tpope/vim-rails'
 Bundle 'vim-ruby/vim-ruby'
 
 " utility
+" extend % to more languages
 Bundle 'tsaleh/vim-matchit'
+" basically maps tab to vim completion, amazing
+Bundle 'tsaleh/vim-supertab'
 Bundle 'tpope/vim-surround'
+" quickly comment anything
 Bundle 'tsaleh/vim-tcomment'
 
 " colors
@@ -31,15 +37,16 @@ Bundle 'tpope/vim-vividchalk'
 " Bundle 'altercation/vim-colors-solarized'
 " Bundle 'hallison/vim-rdoc'
 " Bundle 'Lokaltog/vim-easymotion'
+" didn't really like snipmate
 " Bundle 'msanders/snipmate.vim'
 " Bundle 'rson/vim-conque'
+" automatically checks files for syntax errors, worth looking into
 " Bundle 'scrooloose/syntastic/'
 " Bundle 'tpope/vim-repeat'
-" Bundle 'tpope/vim-five.git'
-" Bundle 'tpope/vim.git'
 " Bundle 'tpope/vim-markdown'
 " Bundle 'tsaleh/vim-align'
-" Bundle 'tsaleh/vim-supertab'
+" looks super cool, compiling c extension didn't work for some reason
+" Bundle 'wincent/Command-T.git'
 " Bundle 'zentrification/vim-slim'
 """"""""""""""""""""""""""""""""""""""""""""
 " git hub how to include folders within repos
@@ -224,13 +231,20 @@ imap <Leader>cm <Esc>:CoffeeMake<CR>
 nmap <Leader>cm :CoffeeMake<CR>
 
 
+" Vundle
+nmap <Leader>bi :BundleInstall<CR>
+nmap <Leader>bi! :BundleInstall!<CR>
+nmap <Leader>bu :BundleInstall!<CR> " Because this also updates
+nmap <Leader>bc :BundleClean<CR>
+
+
 " Filetypes
 " ----------------------------------------------------------------------------
 au BufRead,BufNewFile *.txt       set ft=txt
 
 " supertab
 " ----------------------------------------------------------------------------
-"let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType = "context"
 
 " project.vim
 " ---------------------------------------------------------------------------
