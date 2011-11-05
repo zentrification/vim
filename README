@@ -1,13 +1,14 @@
 Vim setup with
-- pathogen
+- github.com/gmarik/vundle
 - few color schemes I like
-- small suite of plugins
-
-update_bundles.rb is a small script that will help you move to pathogen.vim
 
 Install
 -------
+tar cfz ~/.vimbackup.tgz ~/.vim ~/.vimrc
+rm ~/.vim ~/.vimrc
+git clone git://github.com/zentrification/vim.git ~/.vim
 ln -s ~/.vim/vimrc ~/.vimrc
+cd ~/.vim && git submodule init && git submodule update
 
 Credit
 ------

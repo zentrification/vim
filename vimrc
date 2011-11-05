@@ -1,24 +1,23 @@
 " setup vundle
 " ---------------------------------------------------------------------------
 set nocompatible               " be iMproved
-filetype off                   " required!
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+filetype off                   " required by vundle
 
 " let Vundle manage Vundle
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " github repos
 """"""""""""""
-" Bundle 'tpope/vim-fugitive'
-" Bundle 'Lokaltog/vim-easymotion'
+" how to include folders within repos
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 """"""""""""""""""""""""""""""""""""""""""""
 " Bundle 'astashov/vim-ruby-debugger'
 " Bundle 'altercation/vim-colors-solarized'
 Bundle 'bbommarito/vim-slim'
 " Bundle 'hallison/vim-rdoc'
+" Bundle 'Lokaltog/vim-easymotion'
 Bundle 'kchmck/vim-coffee-script'
 " Bundle 'msanders/snipmate.vim'
 " Bundle 'rson/vim-conque'
