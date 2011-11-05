@@ -8,42 +8,49 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
-" github repos
-""""""""""""""
-" how to include folders within repos
-" Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-""""""""""""""""""""""""""""""""""""""""""""
+" language specific
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'tpope/vim-haml'
+Bundle 'groenewege/vim-less'
+Bundle 'pangloss/vim-javascript'
+Bundle 'itspriddle/vim-jquery'
+Bundle 'vim-scripts/vim-json-bundle'
+Bundle 'bbommarito/vim-slim'
+Bundle 'tpope/vim-rails'
+Bundle 'vim-ruby/vim-ruby'
+
+" utility
+Bundle 'tsaleh/vim-matchit'
+Bundle 'tpope/vim-surround'
+Bundle 'tsaleh/vim-tcomment'
+
+" colors
+Bundle 'tpope/vim-vividchalk'
+
 " Bundle 'astashov/vim-ruby-debugger'
 " Bundle 'altercation/vim-colors-solarized'
-Bundle 'bbommarito/vim-slim'
 " Bundle 'hallison/vim-rdoc'
 " Bundle 'Lokaltog/vim-easymotion'
-Bundle 'kchmck/vim-coffee-script'
 " Bundle 'msanders/snipmate.vim'
 " Bundle 'rson/vim-conque'
 " Bundle 'scrooloose/syntastic/'
-Bundle 'tpope/vim-vividchalk'
 " Bundle 'tpope/vim-repeat'
 " Bundle 'tpope/vim-five.git'
 " Bundle 'tpope/vim.git'
-" Bundle 'tpope/vim-haml'
 " Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-surround'
-Bundle 'tsaleh/vim-tcomment'
 " Bundle 'tsaleh/vim-align'
-" Bundle 'tsaleh/vim-matchit'
 " Bundle 'tsaleh/vim-supertab'
-" Bundle 'vim-ruby/vim-ruby'
 " Bundle 'zentrification/vim-slim'
+""""""""""""""""""""""""""""""""""""""""""""
+" git hub how to include folders within repos
+" Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+""""""""""""""""""""""""""""""""""""""""""""
 " vim-scripts repos
-"""""""""""""""""""
-" Bundle 'L9'
 " Bundle 'FuzzyFinder'
-" Bundle 'rails.vim'
+""""""""""""""""""""""""""""""""""""""""""""
 " non github repos
-""""""""""""""""""
 " Bundle 'git://git.wincent.com/command-t.git'
+""""""""""""""""""""""""""""""""""""""""""""
 
 " General
 " ---------------------------------------------------------------------------
