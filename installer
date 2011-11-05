@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+tar cfz ~/.vimbackup.tgz ~/.vim ~/.vimrc
+rm -rf ~/.vim ~/.vimrc
+echo "backed up existing ~/.vim and ~/.vimrc to ~/.vim_backup.tgz"
+
+git clone -q git://github.com/zentrification/vim.git /tmp/zentrification-vim
+mv /tmp/zentrification-vim ~/.vim
+ln -s ~/.vim/vimrc ~/.vimrc
+echo "cloned repository to ~/.vim and symlinked ~/.vimrc"
+
+cd ~/.vim && git submodule init -q && git submodule update -q
+echo "init and updated vundle submodule"
+echo "now open vim and execute the command BundleInstall"
