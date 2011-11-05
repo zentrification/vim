@@ -5,10 +5,6 @@ Vim setup with
 Install
 -------
 bash< <(curl -s https://raw.github.com/zentrification/vim/master/installer)
-or
-clone, cd into repo, git submodule init && git submodule update
-move repo to ~/.vim, symlink ~/.vim/vimrc to ~/.vimrc
-launch vim, execute the command BundleInstall
 
 Credit
 ------
