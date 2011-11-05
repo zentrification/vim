@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-tar cfz ~/.vimbackup.tgz ~/.vim ~/.vimrc > /dev/null 2>&1
+tar cfz ~/.vim_backup.tgz ~/.vim ~/.vimrc > /dev/null 2>&1
 rm -rf ~/.vim ~/.vimrc
 echo "backed up existing ~/.vim and ~/.vimrc to ~/.vim_backup.tgz"
 
