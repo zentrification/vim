@@ -62,6 +62,11 @@ Bundle 'tpope/vim-vividchalk'
 " https://github.com/mileszs/ack.vim
 " https://bitbucket.org/ns9tks/vim-autocomplpop/
 " https://github.com/vim-scripts/UltiSnips
+" https://github.com/nelstrom/vim-textobj-rubyblock
+" https://github.com/vim-scripts/mru.vim
+" https://github.com/robgleeson/hammer.vim
+" https://github.com/sjl/gundo.vim
+" https://github.com/vim-scripts/camelcasemotion
 
 """"""""""""""""""""""""""""""""""""""""""""
 " git hub how to include folders within repos
