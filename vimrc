@@ -32,10 +32,10 @@ Bundle 'tsaleh/vim-tcomment'
 Bundle 'vim-scripts/taglist.vim'
 
 " colors
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-vividchalk'
 
 " Bundle 'astashov/vim-ruby-debugger'
-" Bundle 'altercation/vim-colors-solarized'
 " Bundle 'hallison/vim-rdoc'
 " Bundle 'Lokaltog/vim-easymotion'
 " didn't really like snipmate
@@ -49,6 +49,14 @@ Bundle 'tpope/vim-vividchalk'
 " looks super cool, compiling c extension didn't work for some reason
 " Bundle 'wincent/Command-T.git'
 " Bundle 'zentrification/vim-slim'
+
+" https://github.com/henrik/vim-indexed-search
+" https://github.com/xolox/vim-session
+" https://github.com/godlygeek/tabular - text aligning
+" https://github.com/spiiph/vim-space
+" https://github.com/vim-scripts/YankRing.vim
+" https://github.com/mileszs/ack.vim
+
 """"""""""""""""""""""""""""""""""""""""""""
 " git hub how to include folders within repos
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -92,6 +100,9 @@ if has("macunix")
     colorscheme=inkpot
   endif
 endif
+
+set background=dark
+colorscheme solarized
 
 "  Highlight
 " ---------------------------------------------------------------------------
