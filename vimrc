@@ -1,3 +1,6 @@
+" how to integrated X11 clipboard with vim registers
+" http://vim.wikia.com/wiki/Accessing_the_system_clipboard
+
 " setup vundle
 " ---------------------------------------------------------------------------
 set nocompatible               " be iMproved
@@ -30,6 +33,7 @@ Bundle 'tpope/vim-surround'
 " quickly comment anything
 Bundle 'tsaleh/vim-tcomment'
 Bundle 'vim-scripts/taglist.vim'
+Bundle 'Raimondi/delimitMate'
 
 " colors
 Bundle 'altercation/vim-colors-solarized'
@@ -56,6 +60,7 @@ Bundle 'tpope/vim-vividchalk'
 " https://github.com/spiiph/vim-space
 " https://github.com/vim-scripts/YankRing.vim
 " https://github.com/mileszs/ack.vim
+" https://bitbucket.org/ns9tks/vim-autocomplpop/
 
 """"""""""""""""""""""""""""""""""""""""""""
 " git hub how to include folders within repos
@@ -71,7 +76,7 @@ Bundle 'tpope/vim-vividchalk'
 " General
 " ---------------------------------------------------------------------------
 
-set history=1000                      " lots of command line history
+set history=100000                    " lots of command line history
 set cf                                " error files / jumping
 set ffs=unix,dos,mac                  " use correct line terminators
 filetype plugin indent on             " enable indenting (required for Vundle)
@@ -81,6 +86,7 @@ set modeline                          " make sure modeline support is enabled
 set autoread                          " reload files (no local changes only)
 set tabpagemax=50                     " open 50 tabs max
 set hidden                            " marks & history remembered in backgrounded buffers
+set autowrite                         " write on make/shell commands
 
 " Colors / Theme
 " ---------------------------------------------------------------------------
@@ -151,6 +157,16 @@ set ignorecase             " ignore case when searching
 set nohlsearch             " don't highlight searches
 set visualbell             " shut the fuck up
 set cursorline             " highlight current line
+
+" Sounds
+" ----------------------------------------------------------------------------
+set noerrorbells
+set novisualbells
+
+" Mouse
+" ----------------------------------------------------------------------------
+set mousehide              " Hide mouse after chars typed
+set mouse=a                " Mouse in all modes
 
 " Text Formatting
 " ----------------------------------------------------------------------------
