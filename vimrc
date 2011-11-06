@@ -61,6 +61,7 @@ Bundle 'tpope/vim-vividchalk'
 " https://github.com/vim-scripts/YankRing.vim
 " https://github.com/mileszs/ack.vim
 " https://bitbucket.org/ns9tks/vim-autocomplpop/
+" https://github.com/vim-scripts/UltiSnips
 
 """"""""""""""""""""""""""""""""""""""""""""
 " git hub how to include folders within repos
@@ -87,6 +88,7 @@ set autoread                          " reload files (no local changes only)
 set tabpagemax=50                     " open 50 tabs max
 set hidden                            " marks & history remembered in backgrounded buffers
 set autowrite                         " write on make/shell commands
+" set clipboard+=unnamed
 
 " Colors / Theme
 " ---------------------------------------------------------------------------
@@ -145,6 +147,7 @@ set shortmess=filtIoOA     " shorten messages
 "set report=0               " tell us about changes
 set nostartofline          " don't jump to the start of line when scrolling
 set scrolloff=5            " move top/bottom of viewport with cursor
+set splitbelow
 
 " Visual Cues
 " ----------------------------------------------------------------------------
@@ -194,6 +197,7 @@ let mapleader = ';'
 
 imap <Leader>; <Esc>
 map <Leader>sh :sh<CR>
+map <Leader>h :help 
 map <Leader>xml :%!ruby ~/bin/xmlformat.rb<CR>
 nmap <Leader>r :!!<CR>
 nmap <Leader>sn :set invnumber<CR>
