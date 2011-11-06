@@ -29,6 +29,7 @@ Bundle 'tsaleh/vim-supertab'
 Bundle 'tpope/vim-surround'
 " quickly comment anything
 Bundle 'tsaleh/vim-tcomment'
+Bundle 'vim-scripts/taglist.vim'
 
 " colors
 Bundle 'tpope/vim-vividchalk'
@@ -230,13 +231,15 @@ nmap <Leader>rv :Rview
 imap <Leader>cm <Esc>:CoffeeMake<CR>
 nmap <Leader>cm :CoffeeMake<CR>
 
-
 " Vundle
 nmap <Leader>bi :BundleInstall<CR>
 nmap <Leader>bi! :BundleInstall!<CR>
 nmap <Leader>bu :BundleInstall!<CR> " Because this also updates
 nmap <Leader>bc :BundleClean<CR>
 
+" taglist
+nnoremap <silent> <F8> :TlistToggle<CR>
+nmap <Leader>tla <Esc>:TlistAddFilesRecursive ./ *rb
 
 " Filetypes
 " ----------------------------------------------------------------------------
