@@ -161,7 +161,7 @@ set cursorline             " highlight current line
 " Sounds
 " ----------------------------------------------------------------------------
 set noerrorbells
-set novisualbells
+set novisualbell
 
 " Mouse
 " ----------------------------------------------------------------------------
