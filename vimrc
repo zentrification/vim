@@ -254,18 +254,14 @@ nnoremap <Up> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <Down> :execute 'silent! tabmove ' . tabpagenr()<CR>
 
 " rails.vim
-imap <Leader>rc <Esc>:Rcontroller 
-nmap <Leader>rc :Rcontroller 
-imap <Leader>rj <Esc>:Rjavascript 
-nmap <Leader>rj :Rjavascript 
-imap <Leader>rl <Esc>:Rlayout 
-nmap <Leader>rl :Rlayout 
-imap <Leader>rm <Esc>:Rmodel 
-nmap <Leader>rm :Rmodel 
-imap <Leader>rs <Esc>:Rstylesheet 
-nmap <Leader>rs :Rstylesheet 
-imap <Leader>rv <Esc>:Rview 
-nmap <Leader>rv :Rview 
+nnoremap <Leader>rc :Rcontroller
+nnoremap <Leader>rj :Rjavascript
+nnoremap <Leader>rl :Rlayout
+nnoremap <Leader>rm :Rmodel
+nnoremap <Leader>rs :Rstylesheet
+nnoremap <Leader>rv :Rview
+nnoremap <Leader>ra :A
+nnoremap <Leader>rr :R
 
 " coffeescript
 imap <Leader>cm <Esc>:CoffeeMake<CR>
