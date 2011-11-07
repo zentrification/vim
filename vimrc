@@ -51,7 +51,6 @@ Bundle 'tpope/vim-vividchalk'
 " Bundle 'tpope/vim-repeat'
 " Bundle 'tpope/vim-markdown'
 " Bundle 'tsaleh/vim-align'
-" looks super cool, compiling c extension didn't work for some reason
 " Bundle 'zentrification/vim-slim'
 
 " https://github.com/henrik/vim-indexed-search
@@ -200,6 +199,7 @@ set list listchars=trail:.,tab:>.
 
 " ---------------------------------------------------------------------------
 " mappings
+" map and noremap are recursive and non-recursive mapping commands
 " ---------------------------------------------------------------------------
 let mapleader = ';'
 
@@ -211,6 +211,10 @@ nmap <Leader>r :!!<CR>
 nmap <Leader>sn :set invnumber<CR>
 nmap <Leader>sp :set invpaste paste?<CR>
 " nmap <Leader>t :ConqueTermSplit bash<CR>:set list!<CR>
+
+" explorer
+nmap <Leader>e :e.<CR>
+nmap <Leader>se :Se.<CR>
 
 " search
 imap <Leader>s <Esc>:%s/
@@ -237,20 +241,17 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-h> <C-w>h
 nmap <C-l> <C-w>l
-nmap <Leader>e :e.<CR>
-nmap <Leader>se :Se.<CR>
 nmap <Leader>wm <C-w>_
 " going back and forth mimizes project.vim
 nmap <Leader>wn <C-w>=<C-w>h<C-w>l
 
 " tabs
-map <Leader>tba <C-o>:tab ball<CR>
-imap <Leader>tn <C-o>:tabnew<CR>
-nmap <Leader>tn :tabnew<CR>
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
-nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
-nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
+nnoremap <Leader>tba <C-o>:tab ball<CR>
+nnoremap <Leader>tn :tabnew<CR>
+nnoremap <Left>  :tabprevious<CR>
+nnoremap <Right> :tabnext<CR>
+nnoremap <Up> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+nnoremap <Down> :execute 'silent! tabmove ' . tabpagenr()<CR>
 
 " rails.vim
 imap <Leader>rc <Esc>:Rcontroller 
