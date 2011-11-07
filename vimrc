@@ -25,6 +25,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'vim-ruby/vim-ruby'
 
 " utility
+Bundle 'wincent/Command-T.git'
 " extend % to more languages
 Bundle 'tsaleh/vim-matchit'
 " basically maps tab to vim completion, amazing
@@ -51,7 +52,6 @@ Bundle 'tpope/vim-vividchalk'
 " Bundle 'tpope/vim-markdown'
 " Bundle 'tsaleh/vim-align'
 " looks super cool, compiling c extension didn't work for some reason
-" Bundle 'wincent/Command-T.git'
 " Bundle 'zentrification/vim-slim'
 
 " https://github.com/henrik/vim-indexed-search
@@ -93,29 +93,32 @@ set autoread                          " reload files (no local changes only)
 set tabpagemax=50                     " open 50 tabs max
 set hidden                            " marks & history remembered in backgrounded buffers
 set autowrite                         " write on make/shell commands
+set timeoutlen=250                    " Time to wait after ESC (default causes an annoying delay)
 " set clipboard+=unnamed
 
 " Colors / Theme
 " ---------------------------------------------------------------------------
-
 syntax on
 set hlsearch
 
+" colorscheme solarized
+" set background=dark
+" let g:solarized_termcolors=256
+" let g:solarized_termtrans=1
+" let g:solarized_termtrans=1
+
 if $TERM =~ 'xterm-256color'
   set t_Co=256
-  " colorscheme ir_black
+  colorscheme ir_black
   set background=dark
   " colorscheme solarized
 endif
-if has("macunix")
-  let s:uname = system("uname")
-  if s:uname == "Darwin"
-    colorscheme=inkpot
-  endif
-endif
-
-set background=dark
-colorscheme solarized
+" if has("macunix")
+"   let s:uname = system("uname")
+"   if s:uname == "Darwin"
+"     colorscheme=inkpot
+"   endif
+" endif
 
 "  Highlight
 " ---------------------------------------------------------------------------
@@ -276,10 +279,6 @@ nmap <Leader>bc :BundleClean<CR>
 " taglist
 nnoremap <silent> <F8> :TlistToggle<CR>
 nmap <Leader>tla <Esc>:TlistAddFilesRecursive ./ *rb
-
-" Filetypes
-" ----------------------------------------------------------------------------
-au BufRead,BufNewFile *.txt       set ft=txt
 
 " supertab
 " ----------------------------------------------------------------------------
