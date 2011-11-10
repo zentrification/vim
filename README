@@ -4,7 +4,7 @@ Vim setup with
 
 Install
 -------
-bash< <(curl -s https://raw.github.com/zentrification/vim/master/installer)
+curl https://raw.github.com/zentrification/vim/master/installer | sh
 
 Credit
 ------
