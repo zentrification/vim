@@ -10,7 +10,6 @@ ln -s ~/.vim/vimrc ~/.vimrc
 echo "cloned repository to ~/.vim and symlinked ~/.vimrc"
 
 cd ~/.vim
-git submodule init > /dev/null 2>&1
-git submodule update > /dev/null 2>&1
+git submodule update --init > /dev/null 2>&1
 echo "git submodule init and update for vundle"
 echo "now open vim and execute the command BundleInstall"
