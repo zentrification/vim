@@ -250,12 +250,13 @@ nmap <Leader>wm <C-w>_
 nmap <Leader>wn <C-w>=<C-w>h<C-w>l
 
 " tabs
-nnoremap <Leader>tba <C-o>:tab ball<CR>
-nnoremap <Leader>tn :tabnew<CR>
 nnoremap <Left>  :tabprevious<CR>
 nnoremap <Right> :tabnext<CR>
 nnoremap <Up> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <Down> :execute 'silent! tabmove ' . tabpagenr()<CR>
+nnoremap <Leader>tn :tabnew<CR>
+" create tabs from all buffers
+nnoremap <Leader>tb <C-o>:tab ball<CR>
 
 " rails.vim
 nnoremap <Leader>rc :Rcontroller
@@ -280,6 +281,10 @@ nmap <Leader>bc :BundleClean<CR>
 " taglist
 nnoremap <silent> <F8> :TlistToggle<CR>
 nmap <Leader>tla <Esc>:TlistAddFilesRecursive ./ *rb
+
+" Command-T
+nnoremap <silent> <Leader>ct :CommandT<CR>
+nnoremap <silent> <Leader>ctb :CommandTBuffer<CR>
 
 " supertab
 " ------------------------------------------------------------
