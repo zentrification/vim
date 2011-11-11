@@ -2,7 +2,7 @@
 " http://vim.wikia.com/wiki/Accessing_the_system_clipboard
 
 " setup vundle
-" ---------------------------------------------------------------------------
+" ------------------------------------------------------------
 set nocompatible               " be iMproved
 filetype off                   " required by vundle
 
@@ -79,7 +79,7 @@ Bundle 'tpope/vim-vividchalk'
 """"""""""""""""""""""""""""""""""""""""""""
 
 " General
-" ---------------------------------------------------------------------------
+" ------------------------------------------------------------
 
 set history=100000                    " lots of command line history
 set cf                                " error files / jumping
@@ -96,7 +96,7 @@ set timeoutlen=250                    " Time to wait after ESC (default causes a
 " set clipboard+=unnamed
 
 " Colors / Theme
-" ---------------------------------------------------------------------------
+" ------------------------------------------------------------
 syntax on
 set hlsearch
 
@@ -120,7 +120,7 @@ endif
 " endif
 
 "  Highlight
-" ---------------------------------------------------------------------------
+" ------------------------------------------------------------
 " highlight Comment         ctermfg=DarkGrey guifg=#444444
 " highlight StatusLineNC    ctermfg=Black ctermbg=DarkGrey cterm=bold
 " highlight StatusLine      ctermbg=Black ctermfg=LightGrey
@@ -128,8 +128,7 @@ endif
 " highlight SpecialKey ctermfg=DarkGray ctermbg=Black
 
 "  Backups
-" ----------------------------------------------------------------------------
-
+" ------------------------------------------------------------
 set nobackup                           " do not keep backups after close
 set nowritebackup                      " do not keep a backup while working
 set noswapfile                         " don't keep swp files either
@@ -139,7 +138,7 @@ set backupskip=/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*
 set directory=~/.vim/swap,~/tmp,.      " keep swp files under ~/.vim/swap
 
 "  UI
-" ----------------------------------------------------------------------------
+" ------------------------------------------------------------
 
 set ruler                  " show the cursor position all the time
 set noshowcmd              " don't display incomplete commands
@@ -157,7 +156,7 @@ set scrolloff=5            " move top/bottom of viewport with cursor
 set splitbelow
 
 " Visual Cues
-" ----------------------------------------------------------------------------
+" ------------------------------------------------------------
 
 set showmatch              " brackets/braces that is
 set mat=5                  " duration to show matching brace (1/10 sec)
@@ -169,17 +168,17 @@ set visualbell             " shut the fuck up
 set cursorline             " highlight current line
 
 " Sounds
-" ----------------------------------------------------------------------------
+" ------------------------------------------------------------
 set noerrorbells
 set novisualbell
 
 " Mouse
-" ----------------------------------------------------------------------------
+" ------------------------------------------------------------
 set mousehide              " Hide mouse after chars typed
 set mouse=a                " Mouse in all modes
 
 " Text Formatting
-" ----------------------------------------------------------------------------
+" ------------------------------------------------------------
 " read this blog post on tabs
 " http://tedlogan.com/techblog3.html
 
@@ -197,10 +196,15 @@ set virtualedit=block      " allow virtual edit in visual block ..
 " highlight trailing whitespace as '.' and tabs as '>'
 set list listchars=trail:.,tab:>.
 
-" ---------------------------------------------------------------------------
+
+" abbreviations
+" ------------------------------------------------------------
+ab -- ------------------------------
+ab --- ------------------------------------------------------------
+
 " mappings
 " map and noremap are recursive and non-recursive mapping commands
-" ---------------------------------------------------------------------------
+" ------------------------------------------------------------
 let mapleader = ';'
 
 imap <Leader>; <Esc>
@@ -278,17 +282,17 @@ nnoremap <silent> <F8> :TlistToggle<CR>
 nmap <Leader>tla <Esc>:TlistAddFilesRecursive ./ *rb
 
 " supertab
-" ----------------------------------------------------------------------------
+" ------------------------------------------------------------
 let g:SuperTabDefaultCompletionType = "context"
 
 " project.vim
-" ---------------------------------------------------------------------------
+" ------------------------------------------------------------
 let g:proj_window_width=30
 let g:proj_window_increment=50
 let gproj_flags="bimst"
 
 " ruby
-" ----------------------------------------------------------------------------
+" ------------------------------------------------------------
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
