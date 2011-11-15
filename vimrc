@@ -36,9 +36,14 @@ Bundle 'tsaleh/vim-tcomment'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'Raimondi/delimitMate'
 
-" colors
+" interface
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-vividchalk'
+
+" status.vim
+Bundle 'dickeytk/status.vim'
+let g:statusline_syntastic = 0
+let g:statusline_fullpath = 1
 
 " Bundle 'astashov/vim-ruby-debugger'
 " Bundle 'hallison/vim-rdoc'
