@@ -1,6 +1,10 @@
 " how to integrated X11 clipboard with vim registers
 " http://vim.wikia.com/wiki/Accessing_the_system_clipboard
 
+" setup leader
+" ------------------------------------------------------------
+let mapleader = ';'
+
 " setup vundle
 " ------------------------------------------------------------
 set nocompatible               " be iMproved
@@ -26,6 +30,7 @@ Bundle 'itspriddle/vim-jquery'
 Bundle 'vim-scripts/vim-json-bundle'
 Bundle 'bbommarito/vim-slim'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-rvm'
 
 " extend % to more languages
 Bundle 'tsaleh/vim-matchit'
@@ -233,8 +238,6 @@ ab --- ------------------------------------------------------------
 " mappings
 " map and noremap are recursive and non-recursive mapping commands
 " ------------------------------------------------------------
-let mapleader = ';'
-
 imap <Leader>; <Esc>
 map <Leader>sh :sh<CR>
 map <Leader>h :help 
