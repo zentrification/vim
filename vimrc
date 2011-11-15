@@ -10,6 +10,10 @@ filetype off                   " required by vundle
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
+nmap <Leader>bi :BundleInstall<CR>
+nmap <Leader>bi! :BundleInstall!<CR>
+nmap <Leader>bu :BundleInstall!<CR> " Because this also updates
+nmap <Leader>bc :BundleClean<CR>
 
 " language specific
 Bundle 'kchmck/vim-coffee-script'
@@ -21,29 +25,48 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'itspriddle/vim-jquery'
 Bundle 'vim-scripts/vim-json-bundle'
 Bundle 'bbommarito/vim-slim'
-Bundle 'tpope/vim-rails'
 Bundle 'vim-ruby/vim-ruby'
 
-" utility
-Bundle 'wincent/Command-T.git'
 " extend % to more languages
 Bundle 'tsaleh/vim-matchit'
-" basically maps tab to vim completion, amazing
-Bundle 'tsaleh/vim-supertab'
 Bundle 'tpope/vim-surround'
 " quickly comment anything
 Bundle 'tsaleh/vim-tcomment'
-Bundle 'vim-scripts/taglist.vim'
 Bundle 'Raimondi/delimitMate'
-
 " interface
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-vividchalk'
+
+" rails.vim
+Bundle 'tpope/vim-rails'
+nnoremap <Leader>rc :Rcontroller
+nnoremap <Leader>rj :Rjavascript
+nnoremap <Leader>rl :Rlayout
+nnoremap <Leader>rm :Rmodel
+nnoremap <Leader>rs :Rstylesheet
+nnoremap <Leader>rv :Rview
+nnoremap <Leader>ra :A
+nnoremap <Leader>rr :R
+
+" Command-T
+Bundle 'wincent/Command-T.git'
+nnoremap <silent> <Leader>ct :CommandT<CR>
+nnoremap <silent> <Leader>ctb :CommandTBuffer<CR>
 
 " status.vim
 Bundle 'dickeytk/status.vim'
 let g:statusline_syntastic = 0
 let g:statusline_fullpath = 1
+
+" supertab.vim
+" basically maps tab to vim completion, amazing
+Bundle 'tsaleh/vim-supertab'
+let g:SuperTabDefaultCompletionType = "context"
+
+" taglist.vim
+Bundle 'vim-scripts/taglist.vim'
+nnoremap <silent> <F8> :TlistToggle<CR>
+nmap <Leader>tla <Esc>:TlistAddFilesRecursive ./ *rb
 
 " Bundle 'astashov/vim-ruby-debugger'
 " Bundle 'hallison/vim-rdoc'
@@ -263,43 +286,9 @@ nnoremap <Leader>tn :tabnew<CR>
 " create tabs from all buffers
 nnoremap <Leader>tb <C-o>:tab ball<CR>
 
-" rails.vim
-nnoremap <Leader>rc :Rcontroller
-nnoremap <Leader>rj :Rjavascript
-nnoremap <Leader>rl :Rlayout
-nnoremap <Leader>rm :Rmodel
-nnoremap <Leader>rs :Rstylesheet
-nnoremap <Leader>rv :Rview
-nnoremap <Leader>ra :A
-nnoremap <Leader>rr :R
-
 " coffeescript
 imap <Leader>cm <Esc>:CoffeeMake<CR>
 nmap <Leader>cm :CoffeeMake<CR>
-
-" Vundle
-nmap <Leader>bi :BundleInstall<CR>
-nmap <Leader>bi! :BundleInstall!<CR>
-nmap <Leader>bu :BundleInstall!<CR> " Because this also updates
-nmap <Leader>bc :BundleClean<CR>
-
-" taglist
-nnoremap <silent> <F8> :TlistToggle<CR>
-nmap <Leader>tla <Esc>:TlistAddFilesRecursive ./ *rb
-
-" Command-T
-nnoremap <silent> <Leader>ct :CommandT<CR>
-nnoremap <silent> <Leader>ctb :CommandTBuffer<CR>
-
-" supertab
-" ------------------------------------------------------------
-let g:SuperTabDefaultCompletionType = "context"
-
-" project.vim
-" ------------------------------------------------------------
-let g:proj_window_width=30
-let g:proj_window_increment=50
-let gproj_flags="bimst"
 
 " ruby
 " ------------------------------------------------------------
@@ -310,3 +299,8 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 "improve autocomplete menu color
 highlight Pmenu ctermbg=238 gui=bold
 
+" project.vim
+" ------------------------------------------------------------
+let g:proj_window_width=30
+let g:proj_window_increment=50
+let gproj_flags="bimst"
