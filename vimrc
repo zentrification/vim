@@ -23,6 +23,7 @@ nmap <Leader>bc :BundleClean<CR>
 Bundle 'kchmck/vim-coffee-script'
 " add end keyword in ruby
 Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
 Bundle 'groenewege/vim-less'
 Bundle 'pangloss/vim-javascript'
@@ -59,9 +60,9 @@ nnoremap <silent> <Leader>ct :CommandT<CR>
 nnoremap <silent> <Leader>ctb :CommandTBuffer<CR>
 
 " status.vim
-Bundle 'dickeytk/status.vim'
-let g:statusline_syntastic = 0
-let g:statusline_fullpath = 1
+" Bundle 'dickeytk/status.vim'
+" let g:statusline_syntastic = 0
+" let g:statusline_fullpath = 1
 
 " supertab.vim
 " basically maps tab to vim completion, amazing
@@ -307,3 +308,23 @@ highlight Pmenu ctermbg=238 gui=bold
 let g:proj_window_width=30
 let g:proj_window_increment=50
 let gproj_flags="bimst"
+
+" status line
+" :help statusline idiot
+" ------------------------------------------------------------
+" buffer number, full path of buffer
+set statusline=%n\ %F
+" filetype, RVM status if file is ruby, read only flag
+set statusline+=\ %y%{rvm#statusline_ft_ruby()}%r
+" show git branch
+set statusline+=%{fugitive#statusline()}
+" show if in paste mode
+set statusline+=%*%#error#%{&paste?'[paste]':''}%*
+" modified [+] flag
+set statusline+=%#warningmsg#%m%*
+" left/right seperator
+set statusline+=%=
+" cursor column, current line, total lines, percent through file
+set statusline+=%l(%c)/%L\ %P
+" show file format, file encoding, rvm status line
+set statusline+=\ (%{&ff},%{&fenc})
