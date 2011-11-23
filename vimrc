@@ -1,6 +1,10 @@
 " how to integrated X11 clipboard with vim registers
 " http://vim.wikia.com/wiki/Accessing_the_system_clipboard
 
+" config's to pimp
+" http://amix.dk/vim/vimrc.html
+" https://github.com/sjl/dotfiles/blob/master/vim/.vimrc
+
 " setup leader
 " ------------------------------------------------------------
 let mapleader = ';'
@@ -21,8 +25,6 @@ nmap <Leader>bc :BundleClean<CR>
 
 " language specific
 Bundle 'kchmck/vim-coffee-script'
-" add end keyword in ruby
-Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
 Bundle 'groenewege/vim-less'
@@ -33,15 +35,24 @@ Bundle 'bbommarito/vim-slim'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rvm'
 
+" automatic end keyword for blocks in ruby
+Bundle 'tpope/vim-endwise'
+" automatic closing of quotes, brackets, parenthesis etc
+Bundle 'Raimondi/delimitMate'
 " extend % to more languages
 Bundle 'tsaleh/vim-matchit'
+" quickly change surrounding '"<>(){} etc
 Bundle 'tpope/vim-surround'
 " quickly comment anything
 Bundle 'tsaleh/vim-tcomment'
-Bundle 'Raimondi/delimitMate'
+
 " interface
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-vividchalk'
+
+" gundo.vim - visual undo tree
+Bundle 'sjl/gundo.vim'
+nnoremap <F5> :GundoToggle<CR>
 
 " rails.vim
 Bundle 'tpope/vim-rails'
@@ -58,11 +69,6 @@ nnoremap <Leader>rr :R
 Bundle 'wincent/Command-T.git'
 nnoremap <silent> <Leader>ct :CommandT<CR>
 nnoremap <silent> <Leader>ctb :CommandTBuffer<CR>
-
-" status.vim
-" Bundle 'dickeytk/status.vim'
-" let g:statusline_syntastic = 0
-" let g:statusline_fullpath = 1
 
 " supertab.vim
 " basically maps tab to vim completion, amazing
@@ -248,6 +254,9 @@ nmap <Leader>sn :set invnumber<CR>
 nmap <Leader>sp :set invpaste paste?<CR>
 " nmap <Leader>t :ConqueTermSplit bash<CR>:set list!<CR>
 
+nnoremap <Leader>csi :colorscheme inkpot<CR>
+nnoremap <Leader>css :colorscheme solarized<CR>
+
 " explorer
 nmap <Leader>e :e.<CR>
 nmap <Leader>se :Se.<CR>
@@ -326,5 +335,5 @@ set statusline+=%#warningmsg#%m%*
 set statusline+=%=
 " cursor column, current line, total lines, percent through file
 set statusline+=%l(%c)/%L\ %P
-" show file format, file encoding, rvm status line
+" show file format, file encoding
 set statusline+=\ (%{&ff},%{&fenc})
