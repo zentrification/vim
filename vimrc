@@ -34,6 +34,8 @@ Bundle 'vim-scripts/vim-json-bundle'
 Bundle 'bbommarito/vim-slim'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rvm'
+Bundle 'vim-scripts/aspnet.vim--Abshire'
+autocmd BufRead,BufNewFile *.aspx set filetype=aspnet
 
 " automatic end keyword for blocks in ruby
 Bundle 'tpope/vim-endwise'
@@ -45,6 +47,8 @@ Bundle 'tsaleh/vim-matchit'
 Bundle 'tpope/vim-surround'
 " quickly comment anything
 Bundle 'tsaleh/vim-tcomment'
+" diff two visual blocks
+" Bundle 'vim-scripts/BlockDiff'
 
 " interface
 Bundle 'altercation/vim-colors-solarized'
@@ -186,6 +190,8 @@ set nolazyredraw           " turn off lazy redraw
 set number                 " line numbers
 set wildmenu               " turn on wild menu
 set wildmode=list:longest,full
+set wildignore+=.git,.svn
+set wildignore+=.jpg,.jpeg,.gif,.png,.tiff
 set ch=2                   " command line height
 set backspace=2            " allow backspacing over everything in insert mode
 set whichwrap+=<,>,h,l,[,] " backspace and cursor keys wrap to
@@ -193,6 +199,7 @@ set shortmess=filtIoOA     " shorten messages
 "set report=0               " tell us about changes
 set nostartofline          " don't jump to the start of line when scrolling
 set scrolloff=5            " move top/bottom of viewport with cursor
+set sidescrolloff=5
 set splitbelow
 
 " Visual Cues
@@ -233,8 +240,8 @@ set nosmarttab             " fuck tabs
 set formatoptions+=n       " support for numbered/bullet lists
 set textwidth=120          " wrap at 80 no 120 chars by default
 set virtualedit=block      " allow virtual edit in visual block ..
-" highlight trailing whitespace as '.' and tabs as '>'
-set list listchars=trail:.,tab:>.
+" highlight trailing whitespace as '~' and tabs as '>'
+set list listchars=trail:~,tab:>.
 
 
 " abbreviations
@@ -254,8 +261,28 @@ nmap <Leader>sn :set invnumber<CR>
 nmap <Leader>sp :set invpaste paste?<CR>
 " nmap <Leader>t :ConqueTermSplit bash<CR>:set list!<CR>
 
+" make Y consistend with C and D
+nnoremap Y y$
+
+" colorschemes
 nnoremap <Leader>csi :colorscheme inkpot<CR>
 nnoremap <Leader>css :colorscheme solarized<CR>
+
+" jj exists insert
+inoremap jj <ESC>
+cnoremap jj <ESC>
+
+" sessions
+nnoremap <Leader>ws :mksession .vim-session
+" autoload session file if it exists
+function! RestoreSession()
+  if argc() == 0 "vim called without arguments
+    if filereadable('.vim-session')
+      execute 'source .vim-session'
+    end
+  end
+endfunction
+autocmd VimEnter * call RestoreSession()
 
 " explorer
 nmap <Leader>e :e.<CR>
@@ -267,7 +294,6 @@ nmap <Leader>s :%s/
 
 " quitting
 nmap <Leader>q :q<CR>
-nmap <Leader>qa :qa<CR>
 nmap <Leader>Q :q!<CR>
 
 " writing files
@@ -280,12 +306,16 @@ imap <Leader>x <C-o>:x<CR>
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
+" simplify window splits
+nnoremap <silent> vv <C-w>v
+nnoremap <silent> ss <C-w>s
 " window split movements
 nmap <C-n> <C-w>n
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-h> <C-w>h
 nmap <C-l> <C-w>l
+" maximize current split
 nmap <Leader>wm <C-w>_
 " going back and forth mimizes project.vim
 nmap <Leader>wn <C-w>=<C-w>h<C-w>l
@@ -324,7 +354,7 @@ let gproj_flags="bimst"
 " buffer number, full path of buffer
 set statusline=%n\ %F
 " filetype, RVM status if file is ruby, read only flag
-set statusline+=\ %y%{rvm#statusline_ft_ruby()}%r
+"set statusline+=\ %y%{rvm#statusline_ft_ruby()}%r
 " show git branch
 set statusline+=%{fugitive#statusline()}
 " show if in paste mode
@@ -337,3 +367,4 @@ set statusline+=%=
 set statusline+=%l(%c)/%L\ %P
 " show file format, file encoding
 set statusline+=\ (%{&ff},%{&fenc})
+
