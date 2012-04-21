@@ -49,13 +49,21 @@ Bundle 'tsaleh/vim-matchit'
 " quickly change surrounding '"<>(){} etc
 Bundle 'tpope/vim-surround'
 " quickly comment anything
-Bundle 'tsaleh/vim-tcomment'
+Bundle 'vim-scripts/tComment'
 " diff two visual blocks
 " Bundle 'vim-scripts/BlockDiff'
+Bundle 'nathanaelkane/vim-indent-guides'
+" let g:indent_guides_auto_colors = 0
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 
-" interface
+" color schemes
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-vividchalk'
+Bundle 'tomasr/molokai'
+
+" status line
+Bundle 'Lokaltog/vim-powerline'
 
 " mini buffer explorer
 " Bundle 'fholgado/minibufexpl.vim.git'
@@ -75,10 +83,14 @@ nnoremap <Leader>rv :Rview
 nnoremap <Leader>ra :A
 nnoremap <Leader>rr :R
 
+" Control-P
+Bundle 'kien/ctrlp.vim'
+
 " Command-T
-Bundle 'wincent/Command-T.git'
-nnoremap <silent> <Leader>ct :CommandT<CR>
-nnoremap <silent> <Leader>ctb :CommandTBuffer<CR>
+" trying out control-p above instead
+" Bundle 'wincent/Command-T.git'
+" nnoremap <silent> <Leader>ct :CommandT<CR>
+" nnoremap <silent> <Leader>ctb :CommandTBuffer<CR>
 
 " supertab.vim
 " basically maps tab to vim completion, amazing
@@ -143,6 +155,7 @@ set tabpagemax=50                     " open 50 tabs max
 set hidden                            " marks & history remembered in backgrounded buffers
 set autowrite                         " write on make/shell commands
 set timeoutlen=350                    " Time to wait after ESC (default causes an annoying delay)
+set encoding=utf-8
 " set clipboard+=unnamed
 
 " Colors / Theme
@@ -355,24 +368,3 @@ highlight Pmenu ctermbg=238 gui=bold
 let g:proj_window_width=30
 let g:proj_window_increment=50
 let gproj_flags="bimst"
-
-" status line
-" :help statusline idiot
-" ------------------------------------------------------------
-" buffer number, full path of buffer
-set statusline=%n\ %F
-" filetype, RVM status if file is ruby, read only flag
-"set statusline+=\ %y%{rvm#statusline_ft_ruby()}%r
-" show git branch
-set statusline+=%{fugitive#statusline()}
-" show if in paste mode
-set statusline+=%*%#error#%{&paste?'[paste]':''}%*
-" modified [+] flag
-set statusline+=%#warningmsg#%m%*
-" left/right seperator
-set statusline+=%=
-" cursor column, current line, total lines, percent through file
-set statusline+=%l(%c)/%L\ %P
-" show file format, file encoding
-set statusline+=\ (%{&ff},%{&fenc})
-
