@@ -32,10 +32,13 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'itspriddle/vim-jquery'
 Bundle 'vim-scripts/vim-json-bundle'
 Bundle 'bbommarito/vim-slim'
+autocmd BufWritePost index.slim !slimrb -p index.slim > index.html
+
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rvm'
 Bundle 'vim-scripts/aspnet.vim--Abshire'
 autocmd BufRead,BufNewFile *.aspx set filetype=aspnet
+autocmd BufRead,BufNewFile *.ascx set filetype=aspnet
 
 " automatic end keyword for blocks in ruby
 Bundle 'tpope/vim-endwise'
@@ -53,6 +56,9 @@ Bundle 'tsaleh/vim-tcomment'
 " interface
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-vividchalk'
+
+" mini buffer explorer
+" Bundle 'fholgado/minibufexpl.vim.git'
 
 " gundo.vim - visual undo tree
 Bundle 'sjl/gundo.vim'
@@ -136,7 +142,7 @@ set autoread                          " reload files (no local changes only)
 set tabpagemax=50                     " open 50 tabs max
 set hidden                            " marks & history remembered in backgrounded buffers
 set autowrite                         " write on make/shell commands
-set timeoutlen=250                    " Time to wait after ESC (default causes an annoying delay)
+set timeoutlen=350                    " Time to wait after ESC (default causes an annoying delay)
 " set clipboard+=unnamed
 
 " Colors / Theme
@@ -248,6 +254,8 @@ set list listchars=trail:~,tab:>.
 " ------------------------------------------------------------
 ab -- ------------------------------
 ab --- ------------------------------------------------------------
+
+ab vbresolve <% =Page.ResolveUrl("") %>
 
 " mappings
 " map and noremap are recursive and non-recursive mapping commands
