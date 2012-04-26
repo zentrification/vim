@@ -6,16 +6,16 @@
 " https://github.com/sjl/dotfiles/blob/master/vim/.vimrc
 
 " setup leader
+" hrm not happy with this leader
+" ;; is repeat last f/F/t/T command
 " ------------------------------------------------------------
 let mapleader = ';'
 
 " setup vundle
 " ------------------------------------------------------------
-set nocompatible               " be iMproved
-filetype off                   " required by vundle
-
-" let Vundle manage Vundle
-set rtp+=~/.vim/bundle/vundle/
+set nocompatible                  " be iMproved
+filetype off                      " required by vundle
+set rtp+=~/.vim/bundle/vundle/    " let Vundle manage Vundle
 call vundle#rc()
 Bundle 'gmarik/vundle'
 nmap <Leader>bi :BundleInstall<CR>
@@ -65,9 +65,6 @@ Bundle 'tomasr/molokai'
 " status line
 Bundle 'Lokaltog/vim-powerline'
 
-" mini buffer explorer
-" Bundle 'fholgado/minibufexpl.vim.git'
-
 " gundo.vim - visual undo tree
 Bundle 'sjl/gundo.vim'
 nnoremap <F5> :GundoToggle<CR>
@@ -84,13 +81,8 @@ nnoremap <Leader>ra :A
 nnoremap <Leader>rr :R
 
 " Control-P
+" fuzzy file finder, MRU, buffer explorer
 Bundle 'kien/ctrlp.vim'
-
-" Command-T
-" trying out control-p above instead
-" Bundle 'wincent/Command-T.git'
-" nnoremap <silent> <Leader>ct :CommandT<CR>
-" nnoremap <silent> <Leader>ctb :CommandTBuffer<CR>
 
 " supertab.vim
 " basically maps tab to vim completion, amazing
@@ -270,6 +262,8 @@ ab --- ------------------------------------------------------------
 
 ab vbresolve <% =Page.ResolveUrl("") %>
 
+ab Lorum Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 " mappings
 " map and noremap are recursive and non-recursive mapping commands
 " ------------------------------------------------------------
@@ -326,6 +320,9 @@ imap <Leader>x <C-o>:x<CR>
 " scroll the viewport faster
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
+
+" create fold based on current indent
+nnoremap <Leader>fi V}kzf
 
 " simplify window splits
 nnoremap <silent> vv <C-w>v
