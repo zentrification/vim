@@ -59,17 +59,51 @@ Bundle 'nathanaelkane/vim-indent-guides'
 " autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
 " autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 
-" color schemes
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'tpope/vim-vividchalk'
-Bundle 'tomasr/molokai'
-
 " status line
 Bundle 'Lokaltog/vim-powerline'
+
+" Control-P
+" fuzzy file finder, MRU, buffer explorer
+Bundle 'kien/ctrlp.vim'
 
 " gundo.vim - visual undo tree
 Bundle 'sjl/gundo.vim'
 nnoremap <F5> :GundoToggle<CR>
+
+" neocomplcache
+" ------------------------------
+Bundle 'Shougo/neocomplcache'
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplcache.
+let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+" Use camel case completion.
+let g:neocomplcache_enable_camel_case_completion = 1
+" Use underbar completion.
+let g:neocomplcache_enable_underbar_completion = 1
+" Set minimum syntax keyword length.
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplcache#close_popup()
+inoremap <expr><C-e>  neocomplcache#cancel_popup()
+
+" Enable omni completion.
+autocmd FileType css,scss,sass setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,haml,slim setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript,coffee,iced setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 
 " language specific
 Bundle 'kchmck/vim-coffee-script'
@@ -104,19 +138,15 @@ Bundle 'vim-scripts/aspnet.vim--Abshire'
 autocmd BufRead,BufNewFile *.aspx set filetype=aspnet
 autocmd BufRead,BufNewFile *.ascx set filetype=aspnet
 
-" Control-P
-" fuzzy file finder, MRU, buffer explorer
-Bundle 'kien/ctrlp.vim'
-
-" supertab.vim
-" basically maps tab to vim completion, amazing
-Bundle 'tsaleh/vim-supertab'
-let g:SuperTabDefaultCompletionType = "context"
+" color schemes
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'tpope/vim-vividchalk'
+Bundle 'tomasr/molokai'
 
 " taglist.vim
-Bundle 'vim-scripts/taglist.vim'
-nnoremap <silent> <F8> :TlistToggle<CR>
-nmap <Leader>tla <Esc>:TlistAddFilesRecursive ./ *rb
+" Bundle 'vim-scripts/taglist.vim'
+" nnoremap <silent> <F8> :TlistToggle<CR>
+" nmap <Leader>tla <Esc>:TlistAddFilesRecursive ./ *rb
 
 " Bundle 'Lokaltog/vim-easymotion'
 " Bundle 'rson/vim-conque'
@@ -371,7 +401,6 @@ nmap <Leader>cm :CoffeeMake<CR>
 
 " ruby
 " ------------------------------------------------------------
-autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
