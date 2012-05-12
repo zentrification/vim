@@ -23,33 +23,35 @@ nmap <Leader>bi! :BundleInstall!<CR>
 nmap <Leader>bu :BundleInstall!<CR> " Because this also updates
 nmap <Leader>bc :BundleClean<CR>
 
-" language specific
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-haml'
-Bundle 'groenewege/vim-less'
-Bundle 'pangloss/vim-javascript'
-Bundle 'itspriddle/vim-jquery'
-Bundle 'vim-scripts/vim-json-bundle'
-Bundle 'bbommarito/vim-slim'
-autocmd BufWritePost index.slim !slimrb -p index.slim > index.html
+" recent plugin watch list
+" https://github.com/Shougo/neocomplcache
+" https://github.com/hsitz/VimOrganizer
+" https://github.com/Lokaltog/vim-easymotion
+" https://github.com/godlygeek/tabular
 
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-rvm'
-Bundle 'vim-scripts/aspnet.vim--Abshire'
-autocmd BufRead,BufNewFile *.aspx set filetype=aspnet
-autocmd BufRead,BufNewFile *.ascx set filetype=aspnet
+" text objects
+" ------------------------------------------------------------
+" http://blog.carbonfive.com/2011/10/17/vim-text-objects-the-definitive-guide/
+" http://yanpritzker.com/2011/12/16/learn-to-speak-vim-verbs-nouns-and-modifiers/
+" ------------------------------------------------------------
+" verbs         (v)isual, (c)hange, (d)elete, (y)ank
+" modifiers     (i)nside, (a)round, (t)ill, (f)ind
+" text objects  (w)ord, (s)entence, (p)aragraph, (b)lock, (t)ag
+" ------------------------------------------------------------
+Bundle 'kana/vim-textobj-user'
+" noun (i)ndent block
+Bundle 'michaeljsmith/vim-indent-object'
+" noun  (r)uby block
+Bundle 'nelstrom/vim-textobj-rubyblock'
+" noun  (s)urround - eg cs'" or viwS"
+Bundle 'tpope/vim-surround'
+" verb  (g)o comment
+Bundle 'vim-scripts/tComment'
 
-" automatic end keyword for blocks in ruby
-Bundle 'tpope/vim-endwise'
 " automatic closing of quotes, brackets, parenthesis etc
 Bundle 'Raimondi/delimitMate'
 " extend % to more languages
 Bundle 'tsaleh/vim-matchit'
-" quickly change surrounding '"<>(){} etc
-Bundle 'tpope/vim-surround'
-" quickly comment anything
-Bundle 'vim-scripts/tComment'
 " diff two visual blocks
 " Bundle 'vim-scripts/BlockDiff'
 Bundle 'nathanaelkane/vim-indent-guides'
@@ -69,6 +71,24 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'sjl/gundo.vim'
 nnoremap <F5> :GundoToggle<CR>
 
+" language specific
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-haml'
+Bundle 'groenewege/vim-less'
+Bundle 'pangloss/vim-javascript'
+Bundle 'itspriddle/vim-jquery'
+Bundle 'vim-scripts/vim-json-bundle'
+Bundle 'bbommarito/vim-slim'
+autocmd BufWritePost index.slim !slimrb -p index.slim > index.html
+
+" ruby
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-rvm'
+Bundle 'tpope/vim-endwise'
+" Bundle 'astashov/vim-ruby-debugger'
+" Bundle 'hallison/vim-rdoc'
+
 " rails.vim
 Bundle 'tpope/vim-rails'
 nnoremap <Leader>rc :Rcontroller
@@ -79,6 +99,10 @@ nnoremap <Leader>rs :Rstylesheet
 nnoremap <Leader>rv :Rview
 nnoremap <Leader>ra :A
 nnoremap <Leader>rr :R
+
+Bundle 'vim-scripts/aspnet.vim--Abshire'
+autocmd BufRead,BufNewFile *.aspx set filetype=aspnet
+autocmd BufRead,BufNewFile *.ascx set filetype=aspnet
 
 " Control-P
 " fuzzy file finder, MRU, buffer explorer
@@ -94,11 +118,7 @@ Bundle 'vim-scripts/taglist.vim'
 nnoremap <silent> <F8> :TlistToggle<CR>
 nmap <Leader>tla <Esc>:TlistAddFilesRecursive ./ *rb
 
-" Bundle 'astashov/vim-ruby-debugger'
-" Bundle 'hallison/vim-rdoc'
 " Bundle 'Lokaltog/vim-easymotion'
-" didn't really like snipmate
-" Bundle 'msanders/snipmate.vim'
 " Bundle 'rson/vim-conque'
 " automatically checks files for syntax errors, worth looking into
 " Bundle 'scrooloose/syntastic/'
@@ -115,11 +135,9 @@ nmap <Leader>tla <Esc>:TlistAddFilesRecursive ./ *rb
 " https://github.com/mileszs/ack.vim
 " https://bitbucket.org/ns9tks/vim-autocomplpop/
 " https://github.com/vim-scripts/UltiSnips
-" https://github.com/nelstrom/vim-textobj-rubyblock
 " https://github.com/vim-scripts/mru.vim
 " https://github.com/robgleeson/hammer.vim
 " https://github.com/sjl/gundo.vim
-" https://github.com/vim-scripts/camelcasemotion
 
 """"""""""""""""""""""""""""""""""""""""""""
 " git hub how to include folders within repos
