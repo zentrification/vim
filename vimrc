@@ -89,14 +89,14 @@ let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
-inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+" " <TAB>: completion.
+" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplcache#close_popup()
-inoremap <expr><C-e>  neocomplcache#cancel_popup()
+" inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+" inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+" inoremap <expr><C-y>  neocomplcache#close_popup()
+" inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 " Enable omni completion.
 autocmd FileType css,scss,sass setlocal omnifunc=csscomplete#CompleteCSS
@@ -203,24 +203,15 @@ set encoding=utf-8
 syntax on
 set hlsearch
 
-" colorscheme solarized
-" set background=dark
-" let g:solarized_termcolors=256
-" let g:solarized_termtrans=1
-" let g:solarized_termtrans=1
-
-if $TERM =~ 'xterm-256color'
+if $TERM =~ '256'
   set t_Co=256
-  colorscheme ir_black
+  " colorscheme ir_black
+  colorscheme solarized
   set background=dark
-  " colorscheme solarized
+  let g:solarized_termcolors=256
+  let g:solarized_termtrans=1
+  let g:solarized_termtrans=1
 endif
-" if has("macunix")
-"   let s:uname = system("uname")
-"   if s:uname == "Darwin"
-"     colorscheme=inkpot
-"   endif
-" endif
 
 "  Highlight
 " ------------------------------------------------------------
@@ -383,8 +374,6 @@ nmap <C-h> <C-w>h
 nmap <C-l> <C-w>l
 " maximize current split
 nmap <Leader>wm <C-w>_
-" going back and forth mimizes project.vim
-nmap <Leader>wn <C-w>=<C-w>h<C-w>l
 
 " tabs
 nnoremap <Left>  :tabprevious<CR>
@@ -406,9 +395,3 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 "improve autocomplete menu color
 highlight Pmenu ctermbg=238 gui=bold
-
-" project.vim
-" ------------------------------------------------------------
-let g:proj_window_width=30
-let g:proj_window_increment=50
-let gproj_flags="bimst"
