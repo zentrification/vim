@@ -1,3 +1,29 @@
+" ------------------------------------------------------------
+" TABLE OF CONTENTS
+" ------------------------------------------------------------
+" |vimrc-leader|
+" |vimrc-vundle|
+"
+" |vimrc-language-specific|
+"
+" |vimrc-general|
+" |vimrc-backups|
+" |vimrc-ui|
+" |vimrc-mouse|
+" |vimrc-theme-colors|
+" |vimrc-visual-cues|
+" |vimrc-text-formatting|
+"
+" |vimrc-abbreviations|
+" |vimrc-mappings|
+" |vimrc-text-objects|
+"
+" |vimrc-autocomplete|
+" |vimrc-misc-utilities|
+" ------------------------------------------------------------
+
+
+
 " how to integrated X11 clipboard with vim registers
 " http://vim.wikia.com/wiki/Accessing_the_system_clipboard
 
@@ -30,28 +56,12 @@
 
 
 " ------------------------------------------------------------
-" TABLE OF CONTENTS
+" vimrc-leader
+"   setup leader (need to do this before any mappings)
 " ------------------------------------------------------------
-" |vimrc-vundle|
-"
-" |vimrc-general|
-" |vimrc-backups|
-" |vimrc-ui|
-" |vimrc-mouse|
-" |vimrc-theme-colors|
-" |vimrc-visual-cues|
-" |vimrc-text-formatting|
-"
-" |vimrc-abbreviations|
-" |vimrc-mappings|
-" |vimrc-text-objects|
-"
-" |vimrc-autocomplete|
-" |vimrc-status-line|
-" |vimrc-file-buffer-explorer|
-" |vimrc-undo-tree|
-"
-" |vimrc-language-specific|
+"   hrm i am not happy with this leader
+"   ;; is repeat last f/F/t/T command, and this introduces a delay
+let mapleader = ';'
 
 
 
@@ -74,6 +84,52 @@ nmap <Leader>bc :BundleClean<CR>
 "   Bundle 'FuzzyFinder'
 " non github repos
 "   Bundle 'git://git.wincent.com/command-t.git'
+
+
+
+" ------------------------------------------------------------
+" vimrc-language-specific
+" ------------------------------------------------------------
+Bundle 'kchmck/vim-coffee-script'
+imap <Leader>cm <Esc>:CoffeeMake<CR>
+nmap <Leader>cm :CoffeeMake<CR>
+
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-haml'
+Bundle 'groenewege/vim-less'
+Bundle 'pangloss/vim-javascript'
+Bundle 'itspriddle/vim-jquery'
+Bundle 'vim-scripts/vim-json-bundle'
+Bundle 'bbommarito/vim-slim'
+autocmd BufWritePost index.slim !slimrb -p index.slim > index.html
+
+" ruby
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-rvm'
+Bundle 'tpope/vim-endwise'
+" Bundle 'astashov/vim-ruby-debugger'
+" Bundle 'hallison/vim-rdoc'
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+"improve autocomplete menu color
+"highlight Pmenu ctermbg=238 gui=bold
+
+" rails.vim
+Bundle 'tpope/vim-rails'
+nnoremap <Leader>rc :Rcontroller
+nnoremap <Leader>rj :Rjavascript
+nnoremap <Leader>rl :Rlayout
+nnoremap <Leader>rm :Rmodel
+nnoremap <Leader>rs :Rstylesheet
+nnoremap <Leader>rv :Rview
+nnoremap <Leader>ra :A
+nnoremap <Leader>rr :R
+
+Bundle 'vim-scripts/aspnet.vim--Abshire'
+autocmd BufRead,BufNewFile *.aspx set filetype=aspnet
+autocmd BufRead,BufNewFile *.ascx set filetype=aspnet
+
 
 
 
@@ -188,9 +244,8 @@ set cursorline             " highlight current line
 
 " ------------------------------------------------------------
 " vimrc-text-formatting
-" ------------------------------------------------------------
-" read this blog post on tabs
-" http://tedlogan.com/techblog3.html
+"   read this blog post on tabs
+"   http://tedlogan.com/techblog3.html
 " ------------------------------------------------------------
 set autoindent             " automatic indent new lines
 set smartindent            " be smart about it
@@ -222,13 +277,8 @@ ab Lorum Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo
 
 " ------------------------------------------------------------
 " vimrc-mappings
-" map and noremap are recursive and non-recursive mapping commands
+"   map and noremap are recursive and non-recursive mapping commands
 " ------------------------------------------------------------
-" setup leader
-" hrm not happy with this leader
-" ;; is repeat last f/F/t/T command
-let mapleader = ';'
-
 imap <Leader>; <Esc>
 map <Leader>sh :sh<CR>
 map <Leader>h :help 
@@ -307,13 +357,12 @@ nnoremap <Leader>tb <C-o>:tab ball<CR>
 
 " ------------------------------------------------------------
 " vimrc-text-objects
-" ------------------------------------------------------------
-" http://blog.carbonfive.com/2011/10/17/vim-text-objects-the-definitive-guide/
-" http://yanpritzker.com/2011/12/16/learn-to-speak-vim-verbs-nouns-and-modifiers/
-" ------------------------------------------------------------
-" verbs         (v)isual, (c)hange, (d)elete, (y)ank
-" modifiers     (i)nside, (a)round, (t)ill, (f)ind
-" text objects  (w)ord, (s)entence, (p)aragraph, (b)lock, (t)ag
+"   http://blog.carbonfive.com/2011/10/17/vim-text-objects-the-definitive-guide/
+"   http://yanpritzker.com/2011/12/16/learn-to-speak-vim-verbs-nouns-and-modifiers/
+"
+"   verbs         (v)isual, (c)hange, (d)elete, (y)ank
+"   modifiers     (i)nside, (a)round, (t)ill, (f)ind
+"   text objects  (w)ord, (s)entence, (p)aragraph, (b)lock, (t)ag
 " ------------------------------------------------------------
 Bundle 'kana/vim-textobj-user'
 " noun (i)ndent block
@@ -339,108 +388,90 @@ Bundle 'nathanaelkane/vim-indent-guides'
 
 " ------------------------------------------------------------
 " vimrc-autocomplete
-" w/ neocomplcache
+"   w/ neocomplcache
 " ------------------------------------------------------------
 Bundle 'Shougo/neocomplcache'
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
+Bundle 'Shougo/neocomplcache-snippets-complete'
+Bundle 'Shougo/unite.vim'
+
 " Use neocomplcache.
 let g:neocomplcache_enable_at_startup = 1
-" Use smartcase.
+
+" automatically open completion window when typing in insert mode
+" like AutoComplPop plugin
+let g:neocomplcache_enable_auto_select = 1
+
+" useful completion modes
 let g:neocomplcache_enable_smart_case = 1
-" Use camel case completion.
 let g:neocomplcache_enable_camel_case_completion = 1
-" Use underbar completion.
 let g:neocomplcache_enable_underbar_completion = 1
+
 " Set minimum syntax keyword length.
+let g:neocomplcache_auto_completion_start_length =3
 let g:neocomplcache_min_syntax_length = 3
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
+" Define dictionary.
+let g:neocomplcache_dictionary_filetype_lists = {
+    \ 'default' : ''
+    \ }
+
+" Define keyword.
+if !exists('g:neocomplcache_keyword_patterns')
+  let g:neocomplcache_keyword_patterns = {}
+endif
+let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neocomplcache_snippets_expand)
+smap <C-k>     <Plug>(neocomplcache_snippets_expand)
+inoremap <expr><C-g>     neocomplcache#undo_completion()
+inoremap <expr><C-l>     neocomplcache#complete_common_string()
+
+
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
-" inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+noremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
 " " <TAB>: completion.
-" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
 " <C-h>, <BS>: close popup and delete backword char.
-" inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-" inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-" inoremap <expr><C-y>  neocomplcache#close_popup()
-" inoremap <expr><C-e>  neocomplcache#cancel_popup()
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+
+" this seems to conflict with existing keymapping to scroll viewport
+inoremap <expr><C-y>  neocomplcache#close_popup()
+inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 " Enable omni completion.
-autocmd FileType css,scss,sass setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,haml,slim setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript,coffee,iced setlocal omnifunc=javascriptcomplete#CompleteJS
+" add haml/slim + sass/scss/less + coffee/iced support
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+autocmd FileType ruby setlocal omnifunc=rubycomplete#CompleteRuby
+
+" Enable heavy omni completion.
+if !exists('g:neocomplcache_omni_patterns')
+  let g:neocomplcache_omni_patterns = {}
+endif
+let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
+let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
 
 
 " ------------------------------------------------------------
-" vimrc-status-line
+"   vimrc-misc-utilities
 " ------------------------------------------------------------
 Bundle 'Lokaltog/vim-powerline'
 
-
-
-" ------------------------------------------------------------
-" vimrc-file-buffer-explorer
-" Control-P
-" fuzzy file finder, MRU, buffer explorer
-" ------------------------------------------------------------
+" Control-P - fuzzy file finder, MRU, buffer explorer
 Bundle 'kien/ctrlp.vim'
 
-
-
-" ------------------------------------------------------------
-" vimrc-undo-tree
 " gundo.vim - visual undo tree
-" ------------------------------------------------------------
 Bundle 'sjl/gundo.vim'
 nnoremap <F5> :GundoToggle<CR>
 
-
-
-" ------------------------------------------------------------
-" vimrc-language-specific
-" ------------------------------------------------------------
-Bundle 'kchmck/vim-coffee-script'
-imap <Leader>cm <Esc>:CoffeeMake<CR>
-nmap <Leader>cm :CoffeeMake<CR>
-
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-haml'
-Bundle 'groenewege/vim-less'
-Bundle 'pangloss/vim-javascript'
-Bundle 'itspriddle/vim-jquery'
-Bundle 'vim-scripts/vim-json-bundle'
-Bundle 'bbommarito/vim-slim'
-autocmd BufWritePost index.slim !slimrb -p index.slim > index.html
-
-" ruby
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-rvm'
-Bundle 'tpope/vim-endwise'
-" Bundle 'astashov/vim-ruby-debugger'
-" Bundle 'hallison/vim-rdoc'
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-"improve autocomplete menu color
-"highlight Pmenu ctermbg=238 gui=bold
-
-" rails.vim
-Bundle 'tpope/vim-rails'
-nnoremap <Leader>rc :Rcontroller
-nnoremap <Leader>rj :Rjavascript
-nnoremap <Leader>rl :Rlayout
-nnoremap <Leader>rm :Rmodel
-nnoremap <Leader>rs :Rstylesheet
-nnoremap <Leader>rv :Rview
-nnoremap <Leader>ra :A
-nnoremap <Leader>rr :R
-
-Bundle 'vim-scripts/aspnet.vim--Abshire'
-autocmd BufRead,BufNewFile *.aspx set filetype=aspnet
-autocmd BufRead,BufNewFile *.ascx set filetype=aspnet
 
