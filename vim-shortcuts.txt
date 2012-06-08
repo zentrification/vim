@@ -1,9 +1,3 @@
-'' - move to previous mark
-'0 - open previous file (awesome after you relaunch)
-`a - move to line AND column of mark
-
-"_x - delete without updating clipboard or yank buffer
-
 :s/1/2/g - find/replace in visual block
 
 :%!filter   - put whole file through filterput 
