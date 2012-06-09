@@ -69,6 +69,8 @@ let mapleader = ';'
 
 " ------------------------------------------------------------
 " vimrc-vundle
+"
+" LK: b
 " ------------------------------------------------------------
 set nocompatible                  " be iMproved
 filetype off                      " required by vundle
@@ -91,6 +93,8 @@ nmap <Leader>bc :BundleClean<CR>
 
 " ------------------------------------------------------------
 " vimrc-language-specific
+"
+" LK: c
 " ------------------------------------------------------------
 Bundle 'kchmck/vim-coffee-script'
 imap <Leader>cm <Esc>:CoffeeMake<CR>
@@ -118,6 +122,7 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 "highlight Pmenu ctermbg=238 gui=bold
 
 " rails.vim
+" LK: r
 Bundle 'tpope/vim-rails'
 nnoremap <Leader>rc :Rcontroller
 nnoremap <Leader>rj :Rjavascript
@@ -201,6 +206,8 @@ set mouse=a                " Mouse in all modes
 
 " ------------------------------------------------------------
 " vimrc-theme-colors
+"
+" LK: cs
 " ------------------------------------------------------------
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-vividchalk'
@@ -282,15 +289,15 @@ ab Lorum Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo
 " vimrc-mappings
 "   map and noremap are recursive and non-recursive mapping commands
 " ------------------------------------------------------------
-map <Leader>h :help 
-nmap <Leader>r :!!<CR>
-map <Leader>sh :sh<CR>
+nnoremap <Leader>h :help 
+nnoremap <Leader>r :!!<CR>
+nnoremap <Leader>sh :sh<CR>
 
 nnoremap <Leader>v :source ~/.vimrc<CR>
-map <Leader>xml :%!ruby ~/bin/xmlformat.rb<CR>
+nnoremap <Leader>xml :%!ruby ~/bin/xmlformat.rb<CR>
 
-nmap <Leader>sn :set invnumber<CR>
-nmap <Leader>sp :set invpaste paste?<CR>
+nnoremap <Leader>sn :set invnumber<CR>
+nnoremap <Leader>sp :set invpaste paste?<CR>
 
 " make Y consistend with C and D
 nnoremap Y y$
@@ -300,22 +307,21 @@ inoremap jj <ESC>
 cnoremap jj <ESC>
 
 " explorer
-nmap <Leader>e :e.<CR>
-nmap <Leader>se :Se.<CR>
+nnoremap <Leader>e :e.<CR>
+nnoremap <Leader>se :Se.<CR>
 
 " search
-imap <Leader>s <Esc>:%s/
-nmap <Leader>s :%s/
+nnoremap <Leader>s :%s/
 
 " quitting
-nmap <Leader>q :q<CR>
-nmap <Leader>Q :q!<CR>
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader>Q :q!<CR>
 
 " writing files
-nmap <Leader>w :w<CR>
-imap <Leader>w <C-o>:w<CR><Esc>
-nmap <Leader>x :x<CR>
-imap <Leader>x <C-o>:x<CR>
+nnoremap <Leader>w :w<CR>
+inoremap <Leader>w <C-o>:w<CR><Esc>
+nnoremap <Leader>x :x<CR>
+inoremap <Leader>x <C-o>:x<CR>
 
 " scroll the viewport faster
 nnoremap <C-e> 3<C-e>
@@ -335,6 +341,8 @@ nnoremap <Leader>fi V}kzf
 " ------------------------------------------------------------
 " vimrc-sessions
 "   sessions are useful for saving all open tabs/buffers/panes
+"
+" LK: w
 " ------------------------------------------------------------
 nnoremap <Leader>ws :mksession .vim-session
 
@@ -355,21 +363,23 @@ autocmd VimEnter * call RestoreSession()
 " vimrc-splits
 "   vv/ss split current pane
 "   C-n opens new window in split
+"
+" LK: s, v, w, Ctrl
 " ------------------------------------------------------------
 nnoremap <silent> vv <C-w>v
 nnoremap <silent> ss <C-w>s
 
 " new split
-nmap <C-n> <C-w>n
+nnoremap <C-n> <C-w>n
 
 " improve split navigation
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-h> <C-w>h
-nmap <C-l> <C-w>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 " maximize current split
-nmap <Leader>wm <C-w>_
+nnoremap <Leader>wm <C-w>_
 
 
 
@@ -377,12 +387,15 @@ nmap <Leader>wm <C-w>_
 " vimrc-tabs
 "   left/right arrow keys move between tabs
 "   up/down reorders tabs
+"
+" LK: t
 " ------------------------------------------------------------
 nnoremap <Left>  :tabprevious<CR>
 nnoremap <Right> :tabnext<CR>
-nnoremap <Up> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
-nnoremap <Down> :execute 'silent! tabmove ' . tabpagenr()<CR>
+nnoremap <Up>    :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+nnoremap <Down>  :execute 'silent! tabmove ' . tabpagenr()<CR>
 
+nnoremap <Leader>t  :tabnew<CR>:e.<CR>
 nnoremap <Leader>tn :tabnew<CR>
 nnoremap <Leader>tb <C-o>:tab ball<CR>
 
