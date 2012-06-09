@@ -16,6 +16,8 @@
 "
 " |vimrc-abbreviations|
 " |vimrc-mappings|
+" |vimrc-sessions|
+" |vimrc-tabs|
 " |vimrc-text-objects|
 "
 " |vimrc-autocomplete|
@@ -297,18 +299,6 @@ nnoremap Y y$
 inoremap jj <ESC>
 cnoremap jj <ESC>
 
-" sessions
-nnoremap <Leader>ws :mksession .vim-session
-" autoload session file if it exists
-function! RestoreSession()
-  if argc() == 0 "vim called without arguments
-    if filereadable('.vim-session')
-      execute 'source .vim-session'
-    end
-  end
-endfunction
-autocmd VimEnter * call RestoreSession()
-
 " explorer
 nmap <Leader>e :e.<CR>
 nmap <Leader>se :Se.<CR>
@@ -334,6 +324,12 @@ nnoremap <C-y> 3<C-y>
 " create fold based on current indent
 nnoremap <Leader>fi V}kzf
 
+"Key mapping for textmate-like indentation
+"nmap <D-[> <<
+"nmap <D-]> >>
+"vmap <D-[> <gv
+"vmap <D-]> >gv
+
 " simplify window splits
 nnoremap <silent> vv <C-w>v
 nnoremap <silent> ss <C-w>s
@@ -346,20 +342,40 @@ nmap <C-l> <C-w>l
 " maximize current split
 nmap <Leader>wm <C-w>_
 
-" tabs
+
+
+" ------------------------------------------------------------
+" vimrc-sessions
+"   sessions are useful for saving all open tabs/buffers/panes
+" ------------------------------------------------------------
+nnoremap <Leader>ws :mksession .vim-session
+
+" automatically load session file in cwd if it exists
+" hrm does this fire on new tabs ?
+function! RestoreSession()
+  if argc() == 0 "vim called without arguments
+    if filereadable('.vim-session')
+      execute 'source .vim-session'
+    end
+  end
+endfunction
+autocmd VimEnter * call RestoreSession()
+
+
+
+" ------------------------------------------------------------
+" vimrc-tabs
+"   left/right arrow keys move between tabs
+"   up/down reorders tabs
+" ------------------------------------------------------------
 nnoremap <Left>  :tabprevious<CR>
 nnoremap <Right> :tabnext<CR>
 nnoremap <Up> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <Down> :execute 'silent! tabmove ' . tabpagenr()<CR>
+
 nnoremap <Leader>tn :tabnew<CR>
-" create tabs from all buffers
 nnoremap <Leader>tb <C-o>:tab ball<CR>
 
-"Key mapping for textmate-like indentation
-"nmap <D-[> <<
-"nmap <D-]> >>
-"vmap <D-[> <gv
-"vmap <D-]> >gv
 
 
 " ------------------------------------------------------------
