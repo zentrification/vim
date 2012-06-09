@@ -286,7 +286,7 @@ map <Leader>h :help
 nmap <Leader>r :!!<CR>
 map <Leader>sh :sh<CR>
 
-nnoremap <Leader>v :source ~/.vimrc
+nnoremap <Leader>v :source ~/.vimrc<CR>
 map <Leader>xml :%!ruby ~/bin/xmlformat.rb<CR>
 
 nmap <Leader>sn :set invnumber<CR>
