@@ -43,7 +43,6 @@
 " Bundle 'tsaleh/vim-align'
 " https://github.com/hsitz/VimOrganizer
 " https://github.com/Lokaltog/vim-easymotion
-" https://github.com/godlygeek/tabular
 " https://github.com/henrik/vim-indexed-search
 " https://github.com/xolox/vim-session
 " https://github.com/spiiph/vim-space
@@ -257,7 +256,7 @@ set tabstop=4
 set expandtab              " expand tabs to spaces
 set nosmarttab             " fuck tabs
 set formatoptions+=n       " support for numbered/bullet lists
-set textwidth=120          " wrap at 80 no 120 chars by default
+set textwidth=160          " wrap at 80 no 160 chars by default
 set virtualedit=block      " allow virtual edit in visual block ..
 " highlight trailing whitespace as '~' and tabs as '>'
 set list listchars=trail:~,tab:>.
@@ -288,6 +287,8 @@ nmap <Leader>r :!!<CR>
 nmap <Leader>sn :set invnumber<CR>
 nmap <Leader>sp :set invpaste paste?<CR>
 " nmap <Leader>t :ConqueTermSplit bash<CR>:set list!<CR>
+
+nnoremap <Leader>v :source ~/.vimrc
 
 " make Y consistend with C and D
 nnoremap Y y$
@@ -354,6 +355,11 @@ nnoremap <Leader>tn :tabnew<CR>
 " create tabs from all buffers
 nnoremap <Leader>tb <C-o>:tab ball<CR>
 
+"Key mapping for textmate-like indentation
+"nmap <D-[> <<
+"nmap <D-]> >>
+"vmap <D-[> <gv
+"vmap <D-]> >gv
 
 
 " ------------------------------------------------------------
@@ -474,5 +480,10 @@ Bundle 'kien/ctrlp.vim'
 " gundo.vim - visual undo tree
 Bundle 'sjl/gundo.vim'
 nnoremap <F5> :GundoToggle<CR>
+
+" tabular.vim - tab align text on regexp
+" http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
+Bundle 'godlygeek/tabular'
+nnoremap <Leader>a :Tablularize /
 
 
