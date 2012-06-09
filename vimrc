@@ -17,6 +17,7 @@
 " |vimrc-abbreviations|
 " |vimrc-mappings|
 " |vimrc-sessions|
+" |vimrc-splits|
 " |vimrc-tabs|
 " |vimrc-text-objects|
 "
@@ -281,16 +282,15 @@ ab Lorum Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo
 " vimrc-mappings
 "   map and noremap are recursive and non-recursive mapping commands
 " ------------------------------------------------------------
-imap <Leader>; <Esc>
-map <Leader>sh :sh<CR>
 map <Leader>h :help 
-map <Leader>xml :%!ruby ~/bin/xmlformat.rb<CR>
 nmap <Leader>r :!!<CR>
-nmap <Leader>sn :set invnumber<CR>
-nmap <Leader>sp :set invpaste paste?<CR>
-" nmap <Leader>t :ConqueTermSplit bash<CR>:set list!<CR>
+map <Leader>sh :sh<CR>
 
 nnoremap <Leader>v :source ~/.vimrc
+map <Leader>xml :%!ruby ~/bin/xmlformat.rb<CR>
+
+nmap <Leader>sn :set invnumber<CR>
+nmap <Leader>sp :set invpaste paste?<CR>
 
 " make Y consistend with C and D
 nnoremap Y y$
@@ -330,18 +330,6 @@ nnoremap <Leader>fi V}kzf
 "vmap <D-[> <gv
 "vmap <D-]> >gv
 
-" simplify window splits
-nnoremap <silent> vv <C-w>v
-nnoremap <silent> ss <C-w>s
-" window split movements
-nmap <C-n> <C-w>n
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-h> <C-w>h
-nmap <C-l> <C-w>l
-" maximize current split
-nmap <Leader>wm <C-w>_
-
 
 
 " ------------------------------------------------------------
@@ -360,6 +348,28 @@ function! RestoreSession()
   end
 endfunction
 autocmd VimEnter * call RestoreSession()
+
+
+
+" ------------------------------------------------------------
+" vimrc-splits
+"   vv/ss split current pane
+"   C-n opens new window in split
+" ------------------------------------------------------------
+nnoremap <silent> vv <C-w>v
+nnoremap <silent> ss <C-w>s
+
+" new split
+nmap <C-n> <C-w>n
+
+" improve split navigation
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-h> <C-w>h
+nmap <C-l> <C-w>l
+
+" maximize current split
+nmap <Leader>wm <C-w>_
 
 
 
@@ -500,6 +510,4 @@ nnoremap <F5> :GundoToggle<CR>
 " tabular.vim - tab align text on regexp
 " http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
 Bundle 'godlygeek/tabular'
-nnoremap <Leader>a :Tablularize /
-
-
+nnoremap <Leader>a :Tabularize /
