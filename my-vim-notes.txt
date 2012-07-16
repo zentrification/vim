@@ -1,0 +1,35 @@
+'0
+  open previous file (nice after relaunch)
+
+# ex prompt
+##########################################################################################
+:%!ruby -pe "gsub /classA/, 'classB'"
+
+# g-commands
+##########################################################################################
+
+g; g,
+  navigate list of previous positions in file
+gJ
+  join lines WITHOUT spaces
+
+
+# marks
+##########################################################################################
+''
+  move to previous mark
+`a
+  move to line AND column of mark
+
+
+# registers
+##########################################################################################
+<C-r>0
+  paste test from register 0 in insert mode
+<C-r><C-p>0
+  same as above but fixes indentation
+
+# yanking
+##########################################################################################
+"_x
+  delete without updating clipboard or yank buffer
