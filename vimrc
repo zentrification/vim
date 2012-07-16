@@ -70,7 +70,7 @@ let mapleader = ';'
 " ------------------------------------------------------------
 " vimrc-vundle
 "
-" LK: b
+" LEADERKEY: b
 " ------------------------------------------------------------
 set nocompatible                  " be iMproved
 filetype off                      " required by vundle
@@ -94,7 +94,7 @@ nmap <Leader>bc :BundleClean<CR>
 " ------------------------------------------------------------
 " vimrc-language-specific
 "
-" LK: c
+" LEADERKEY: c
 " ------------------------------------------------------------
 Bundle 'kchmck/vim-coffee-script'
 imap <Leader>cm <Esc>:CoffeeMake<CR>
@@ -122,14 +122,18 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 "highlight Pmenu ctermbg=238 gui=bold
 
 " rails.vim
-" LK: r
+" LEADERKEY: r
 Bundle 'tpope/vim-rails'
-nnoremap <Leader>rc :Rcontroller
-nnoremap <Leader>rj :Rjavascript
-nnoremap <Leader>rl :Rlayout
-nnoremap <Leader>rm :Rmodel
-nnoremap <Leader>rs :Rstylesheet
-nnoremap <Leader>rv :Rview
+nnoremap <Leader>rt :RT
+nnoremap <Leader>rs :RS
+nnoremap <Leader>rv :RV
+
+" nnoremap <Leader>rc :Rcontroller
+" nnoremap <Leader>rj :Rjavascript
+" nnoremap <Leader>rl :Rlayout
+" nnoremap <Leader>rm :Rmodel
+" nnoremap <Leader>rs :Rstylesheet
+" nnoremap <Leader>rv :Rview
 nnoremap <Leader>ra :A
 nnoremap <Leader>rr :R
 
@@ -207,7 +211,7 @@ set mouse=a                " Mouse in all modes
 " ------------------------------------------------------------
 " vimrc-theme-colors
 "
-" LK: cs
+" LEADERKEY: cs
 " ------------------------------------------------------------
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-vividchalk'
@@ -276,8 +280,15 @@ set list listchars=trail:~,tab:>.
 " ------------------------------------------------------------
 " vimrc-abbreviations
 " ------------------------------------------------------------
-ab -- ------------------------------
-ab --- ------------------------------------------------------------
+
+ab dl- ------------------------------------------------------------
+ab dl-- ------------------------------------------------------------------------------------------
+ab dl# ############################################################
+ab dl## ##########################################################################################
+ab dl/ ////////////////////////////////////////////////////////////
+ab dl// //////////////////////////////////////////////////////////////////////////////////////////
+ab dl/* /***********************************************************
+ab dl/** /*****************************************************************************************
 
 ab vbresolve <% =Page.ResolveUrl("") %>
 
@@ -303,6 +314,8 @@ nnoremap <Leader>sp :set invpaste paste?<CR>
 nnoremap Y y$
 
 " jj exists insert
+"   hrm
+"   thinking about something like jja that does <Esc>A
 inoremap jj <ESC>
 cnoremap jj <ESC>
 
@@ -336,13 +349,16 @@ nnoremap <Leader>fi V}kzf
 "vmap <D-[> <gv
 "vmap <D-]> >gv
 
+" make & trigger :&& so it preserves flags
+nnoremap & :&&<Enter>
+xnoremap & :&&<Enter>
 
 
 " ------------------------------------------------------------
 " vimrc-sessions
 "   sessions are useful for saving all open tabs/buffers/panes
 "
-" LK: w
+" LEADERKEY: w
 " ------------------------------------------------------------
 nnoremap <Leader>ws :mksession .vim-session
 
@@ -364,21 +380,24 @@ autocmd VimEnter * call RestoreSession()
 "   vv/ss split current pane
 "   C-n opens new window in split
 "
-" LK: s, v, w, Ctrl
+" LEADERKEY: s, v, w, Ctrl
 " ------------------------------------------------------------
 nnoremap <silent> vv <C-w>v
 nnoremap <silent> ss <C-w>s
 
-" new split
-nnoremap <C-n> <C-w>n
-
-" improve split navigation
+" navigate splits with Ctrl + j/k/h/l
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" maximize current split
+" horizontal split resizing
+nnoremap + 5<C-w>+
+nnoremap - 5<C-w>-
+" vertical split resizing
+nnoremap > 9<C-w>>
+nnoremap < 9<C-w><
+" quickly maximize
 nnoremap <Leader>wm <C-w>_
 
 
@@ -388,7 +407,7 @@ nnoremap <Leader>wm <C-w>_
 "   left/right arrow keys move between tabs
 "   up/down reorders tabs
 "
-" LK: t
+" LEADERKEY: t
 " ------------------------------------------------------------
 nnoremap <Left>  :tabprevious<CR>
 nnoremap <Right> :tabnext<CR>
@@ -523,4 +542,13 @@ nnoremap <F5> :GundoToggle<CR>
 " tabular.vim - tab align text on regexp
 " http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
 Bundle 'godlygeek/tabular'
-nnoremap <Leader>a :Tabularize /
+if exists(":Tabularize")
+  nnoremap <Leader>a :Tab /
+  vnoremap <Leader>a :Tab /
+  nnoremap <Leader>a: :Tab / :/l0
+  vnoremap <Leader>a: :Tab / :/l0
+  " nmap <Leader>a= :Tabularize /=<CR>
+  " vmap <Leader>a= :Tabularize /=<CR>
+  " nmap <Leader>a: :Tabularize /:\zs<CR>
+  " vmap <Leader>a: :Tabularize /:\zs<CR>
+endif
