@@ -313,11 +313,10 @@ nnoremap <Leader>sp :set invpaste paste?<CR>
 " make Y consistend with C and D
 nnoremap Y y$
 
-" jj exists insert
-"   hrm
-"   thinking about something like jja that does <Esc>A
-inoremap jj <ESC>
-cnoremap jj <ESC>
+" quick escape from insert/visual mode
+inoremap jk <ESC>
+inoremap jkl <ESC>A
+cnoremap jk <ESC>
 
 " explorer
 nnoremap <Leader>e :e.<CR>
