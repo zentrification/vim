@@ -20,6 +20,7 @@
 " |vimrc-splits|
 " |vimrc-tabs|
 " |vimrc-text-objects|
+" |vimrc-indents|
 "
 " |vimrc-autocomplete|
 " |vimrc-misc-utilities|
@@ -448,6 +449,14 @@ Bundle 'nathanaelkane/vim-indent-guides'
 " let g:indent_guides_auto_colors = 0
 " autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
 " autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+
+
+" ------------------------------------------------------------
+" vimrc-indents
+"   left/right keys (un)indent text in visual mode
+" ------------------------------------------------------------
+vnoremap <Left> <gv
+vnoremap <Right> >gv
 
 
 " ------------------------------------------------------------
