@@ -107,7 +107,7 @@ Bundle 'groenewege/vim-less'
 Bundle 'pangloss/vim-javascript'
 Bundle 'itspriddle/vim-jquery'
 Bundle 'vim-scripts/vim-json-bundle'
-Bundle 'bbommarito/vim-slim'
+Bundle 'slim-template/vim-slim'
 autocmd BufWritePost index.slim !slimrb -p index.slim > index.html
 
 " ruby
