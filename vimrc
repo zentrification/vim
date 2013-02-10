@@ -282,14 +282,10 @@ set list listchars=trail:~,tab:>.
 " vimrc-abbreviations
 " ------------------------------------------------------------
 
-ab dl- ------------------------------------------------------------
-ab dl-- ------------------------------------------------------------------------------------------
-ab dl# ############################################################
-ab dl## ##########################################################################################
-ab dl/ ////////////////////////////////////////////////////////////
-ab dl// //////////////////////////////////////////////////////////////////////////////////////////
-ab dl/* /***********************************************************
-ab dl/** /*****************************************************************************************
+ab dl-  --------------------------------------------------------------------------------
+ab dl#  ################################################################################
+ab dl/  ////////////////////////////////////////////////////////////////////////////////
+ab dl/* /*******************************************************************************
 
 ab vbresolve <% =Page.ResolveUrl("") %>
 
@@ -464,7 +460,7 @@ vnoremap <Right> >gv
 "   w/ neocomplcache
 " ------------------------------------------------------------
 Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/neocomplcache-snippets-complete'
+Bundle 'Shougo/neosnippet'
 Bundle 'Shougo/unite.vim'
 
 " Use neocomplcache.
@@ -480,7 +476,7 @@ let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_underbar_completion = 1
 
 " Set minimum syntax keyword length.
-let g:neocomplcache_auto_completion_start_length =3
+let g:neocomplcache_auto_completion_start_length = 3
 let g:neocomplcache_min_syntax_length = 3
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
@@ -489,11 +485,12 @@ let g:neocomplcache_dictionary_filetype_lists = {
     \ 'default' : ''
     \ }
 
-" Define keyword.
+" Define keyword for minor languages
 if !exists('g:neocomplcache_keyword_patterns')
   let g:neocomplcache_keyword_patterns = {}
 endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+
 
 " Plugin key-mappings.
 imap <C-k>     <Plug>(neocomplcache_snippets_expand)
@@ -525,13 +522,13 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType ruby setlocal omnifunc=rubycomplete#CompleteRuby
 
 " Enable heavy omni completion.
-if !exists('g:neocomplcache_omni_patterns')
-  let g:neocomplcache_omni_patterns = {}
-endif
-let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
-let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+" if !exists('g:neocomplcache_omni_patterns')
+"   let g:neocomplcache_omni_patterns = {}
+" endif
+" let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+" let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+" let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
+" let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
 
 
