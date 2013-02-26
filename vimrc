@@ -1,3 +1,7 @@
+" TODO:
+" 1. break out configs into their own dirs like
+"     https://github.com/skwp/dotfiles/tree/master/vim/
+
 " ------------------------------------------------------------
 " TABLE OF CONTENTS
 " ------------------------------------------------------------
@@ -5,6 +9,7 @@
 " |vimrc-vundle|
 "
 " |vimrc-language-specific|
+" |vimrc-rails|
 "
 " |vimrc-general|
 " |vimrc-backups|
@@ -122,27 +127,19 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 "improve autocomplete menu color
 "highlight Pmenu ctermbg=238 gui=bold
 
-" rails.vim
-" LEADERKEY: r
-Bundle 'tpope/vim-rails'
-nnoremap <Leader>rt :RT
-nnoremap <Leader>rs :RS
-nnoremap <Leader>rv :RV
-
-" nnoremap <Leader>rc :Rcontroller
-" nnoremap <Leader>rj :Rjavascript
-" nnoremap <Leader>rl :Rlayout
-" nnoremap <Leader>rm :Rmodel
-" nnoremap <Leader>rs :Rstylesheet
-" nnoremap <Leader>rv :Rview
-nnoremap <Leader>ra :A
-nnoremap <Leader>rr :R
-
 Bundle 'vim-scripts/aspnet.vim--Abshire'
 autocmd BufRead,BufNewFile *.aspx set filetype=aspnet
 autocmd BufRead,BufNewFile *.ascx set filetype=aspnet
 
+" ------------------------------------------------------------
+" vimrc-rails
 
+" rails.vim
+" LEADERKEY: r
+Bundle 'tpope/vim-rails'
+nnoremap <Leader>rt :RT 
+nnoremap <Leader>rs :RS 
+nnoremap <Leader>rv :RV 
 
 
 " ------------------------------------------------------------
