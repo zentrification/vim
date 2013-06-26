@@ -182,10 +182,13 @@ set ruler                  " show the cursor position all the time
 set noshowcmd              " don't display incomplete commands
 set nolazyredraw           " turn off lazy redraw
 set number                 " line numbers
-set wildmenu               " turn on wild menu
-set wildmode=list:longest,full
-set wildignore+=.git,.svn
-set wildignore+=.jpg,.jpeg,.gif,.png,.tiff
+if has("wildmenu")
+  set wildmenu               " turn on wild menu
+  set wildmode=list:longest,full
+  set wildignore+=.DS_Store,.git,.hg,.svn
+  set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.tiff,*.bmp,*.ico,*.jpg,*.png
+  set wildignore+=*~,*.swp,*.tmp
+endif
 set ch=2                   " command line height
 set backspace=2            " allow backspacing over everything in insert mode
 set whichwrap+=<,>,h,l,[,] " backspace and cursor keys wrap to
