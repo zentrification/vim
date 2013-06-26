@@ -113,7 +113,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'itspriddle/vim-jquery'
 Bundle 'vim-scripts/vim-json-bundle'
 Bundle 'slim-template/vim-slim'
-autocmd BufWritePost index.slim !slimrb -p index.slim > index.html
+" autocmd BufWritePost index.slim !slimrb -p index.slim > index.html
 
 " ruby
 Bundle 'vim-ruby/vim-ruby'
