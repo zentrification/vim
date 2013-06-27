@@ -249,13 +249,18 @@ set mat=5                  " duration to show matching brace (1/10 sec)
 set incsearch              " do incremental searching
 set laststatus=2           " always show the status line
 set ignorecase             " ignore case when searching
-set nohlsearch             " don't highlight searches
+set hlsearch             " don't highlight searches
 set noerrorbells
 set novisualbell
 set visualbell             " shut the fuck up
 set cursorline             " highlight current line
 
-
+" temporarily disable highlighting
+" makes more sense as <C-l> but thats mapped to window split movement
+nnoremap \l :nohlsearch<CR>
+" toggle search options
+nnoremap \i :set incsearch!<CR>
+nnoremap \h :set hlsearch!<CR>
 
 " ------------------------------------------------------------
 " vimrc-text-formatting
