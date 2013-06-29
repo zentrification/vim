@@ -1,52 +1,51 @@
-" TODO:
+" TABLE OF CONTENTS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vimrc-todo-list
+" vimrc-plugins-watching
+"
+" vimrc-leader
+" vimrc-vundle
+"
+" vimrc-language-specific
+" vimrc-rails
+"
+" vimrc-general
+" vimrc-backups
+" vimrc-ui
+" vimrc-mouse
+" vimrc-theme-colors
+" vimrc-visual-cues
+" vimrc-text-formatting
+" vimrc-indents-tabs
+"
+" vimrc-abbreviations
+" vimrc-mappings
+" vimrc-sessions
+" vimrc-splits
+" vimrc-tabs
+" vimrc-text-objects
+"
+" vimrc-autocomplete
+" vimrc-misc-utilities
+
+
+" vimrc-todo-list
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 1. break out configs into their own dirs like
 "     https://github.com/skwp/dotfiles/tree/master/vim/
-
-" ------------------------------------------------------------
-" TABLE OF CONTENTS
-" ------------------------------------------------------------
-" |vimrc-leader|
-" |vimrc-vundle|
-"
-" |vimrc-language-specific|
-" |vimrc-rails|
-"
-" |vimrc-general|
-" |vimrc-backups|
-" |vimrc-ui|
-" |vimrc-mouse|
-" |vimrc-theme-colors|
-" |vimrc-visual-cues|
-" |vimrc-text-formatting|
-" |vimrc-indents|
-"
-" |vimrc-abbreviations|
-" |vimrc-mappings|
-" |vimrc-sessions|
-" |vimrc-splits|
-" |vimrc-tabs|
-" |vimrc-text-objects|
-"
-" |vimrc-autocomplete|
-" |vimrc-misc-utilities|
-" ------------------------------------------------------------
+" 2. integrated X11 clipboard with vim registers
+"     http://vim.wikia.com/wiki/Accessing_the_system_clipboard
+" 3. config's to pimp
+"     http://amix.dk/vim/vimrc.html
+"     https://github.com/sjl/dotfiles/blob/master/vim/.vimrc
+" 4. ctags, cscope, taglist
+"     Bundle 'vim-scripts/taglist.vim'
+"     nnoremap <silent> <F8> :TlistToggle<CR>
+"     nmap <Leader>tla <Esc>:TlistAddFilesRecursive ./ *rb
 
 
-
-" how to integrated X11 clipboard with vim registers
-" http://vim.wikia.com/wiki/Accessing_the_system_clipboard
-
-" config's to pimp
-" http://amix.dk/vim/vimrc.html
-" https://github.com/sjl/dotfiles/blob/master/vim/.vimrc
-"
-" Bundle 'vim-scripts/taglist.vim'
-" nnoremap <silent> <F8> :TlistToggle<CR>
-" nmap <Leader>tla <Esc>:TlistAddFilesRecursive ./ *rb
-
-" recent plugin watch list
-" ------------------------------
-" Bundle 'rson/vim-conque'
+" vimrc-plugins-watching
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Bundle 'scrooloose/syntastic/'
 " Bundle 'tpope/vim-repeat'
 " Bundle 'tsaleh/vim-align'
@@ -62,20 +61,17 @@
 " https://github.com/robgleeson/hammer.vim
 
 
-
-" ------------------------------------------------------------
 " vimrc-leader
 "   setup leader (need to do this before any mappings)
-" ------------------------------------------------------------
-"   hrm i am not happy with this leader
-"   ;; is repeat last f/F/t/T command, and this introduces a delay
+"   not crazy about ;
+"   introduces delay on ;; (repeat last f/F/t/T command)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = ';'
 
 
-
 " vimrc-vundle
-"   LEADERKEY: b
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"   LEADER: b
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible                  " be iMproved
 filetype off                      " required by vundle
 set rtp+=~/.vim/bundle/vundle/    " let Vundle manage Vundle
@@ -86,20 +82,10 @@ nmap <Leader>bi! :BundleInstall!<CR>
 nmap <Leader>bu :BundleInstall!<CR>
 nmap <Leader>bc :BundleClean<CR>
 
-" github folders within repos
-"   Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-" vim-scripts repos
-"   Bundle 'FuzzyFinder'
-" non github repos
-"   Bundle 'git://git.wincent.com/command-t.git'
 
-
-
-" ------------------------------------------------------------
 " vimrc-language-specific
-"
-" LEADERKEY: c
-" ------------------------------------------------------------
+"   LEADER: c
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'kchmck/vim-coffee-script'
 imap <Leader>cm <Esc>:CoffeeMake<CR>
 nmap <Leader>cm :CoffeeMake<CR>
@@ -111,7 +97,6 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'itspriddle/vim-jquery'
 Bundle 'vim-scripts/vim-json-bundle'
 Bundle 'slim-template/vim-slim'
-" autocmd BufWritePost index.slim !slimrb -p index.slim > index.html
 
 " ruby
 Bundle 'vim-ruby/vim-ruby'
@@ -129,20 +114,18 @@ Bundle 'vim-scripts/aspnet.vim--Abshire'
 autocmd BufRead,BufNewFile *.aspx set filetype=aspnet
 autocmd BufRead,BufNewFile *.ascx set filetype=aspnet
 
-" ------------------------------------------------------------
-" vimrc-rails
 
-" rails.vim
-" LEADERKEY: r
+" vimrc-rails
+"   LEADER: r
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'tpope/vim-rails'
 nnoremap <Leader>rt :RT 
 nnoremap <Leader>rs :RS 
 nnoremap <Leader>rv :RV 
 
 
-" ------------------------------------------------------------
 " vimrc-general
-" ------------------------------------------------------------
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set history=100000                    " lots of command line history
 set cf                                " error files / jumping
 set ffs=unix,dos,mac                  " use correct line terminators
@@ -158,10 +141,8 @@ set encoding=utf-8
 " set clipboard+=unnamed
 
 
-
-" ------------------------------------------------------------
 "  vimrc-backups
-" ------------------------------------------------------------
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nobackup                           " do not keep backups after close
 set nowritebackup                      " do not keep a backup while working
 set noswapfile                         " don't keep swp files either
@@ -171,10 +152,8 @@ set backupskip=/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*
 set directory=~/.vim/swap,~/tmp,.      " keep swp files under ~/.vim/swap
 
 
-
-" ------------------------------------------------------------
 "  vimrc-ui
-" ------------------------------------------------------------
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set ruler                  " show the cursor position all the time
 set noshowcmd              " don't display incomplete commands
 set nolazyredraw           " turn off lazy redraw
@@ -193,24 +172,21 @@ set shortmess=filtIoOA     " shorten messages
 "set report=0               " tell us about changes
 set nostartofline          " don't jump to the start of line when scrolling
 set splitbelow
-
-set scrolloff=5            " move top/bottom of viewport with cursor
+" scrolling
+set scrolloff=5
 set sidescrolloff=7
 set sidescroll=1
 
 
-" ------------------------------------------------------------
 " vimrc-mouse
-" ------------------------------------------------------------
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set mousehide              " Hide mouse after chars typed
 set mouse=a                " Mouse in all modes
 
 
-" ------------------------------------------------------------
 " vimrc-theme-colors
-"
-" LEADERKEY: cs
-" ------------------------------------------------------------
+"   LEADER: cs
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-vividchalk'
 Bundle 'tomasr/molokai'
@@ -236,9 +212,8 @@ endif
 " highlight SpecialKey ctermfg=DarkGray ctermbg=Black
 
 
-" ------------------------------------------------------------
 " vimrc-visual-cues
-" ------------------------------------------------------------
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set showmatch              " brackets/braces that is
 set mat=5                  " duration to show matching brace (1/10 sec)
 set incsearch              " do incremental searching
@@ -258,17 +233,10 @@ nnoremap \i :set incsearch!<CR>
 nnoremap \h :set hlsearch!<CR>
 
 
-" ------------------------------------------------------------
 " vimrc-text-formatting
-"   read this blog post on tabs
-"   http://tedlogan.com/techblog3.html
-" ------------------------------------------------------------
+"   read this post on tabs http://tedlogan.com/techblog3.html
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nowrap                 " do not wrap lines
-set softtabstop=2          " yep, two
-set shiftwidth=2           " ..
-set tabstop=4
-set expandtab              " expand tabs to spaces
-set nosmarttab             " fuck tabs
 set formatoptions+=n       " support for numbered/bullet lists
 set textwidth=160          " wrap at 160 chars by default
 set virtualedit=block      " allow virtual edit in visual block ..
@@ -276,13 +244,17 @@ set virtualedit=block      " allow virtual edit in visual block ..
 set list listchars=trail:~,tab:>.
 
 
-" ------------------------------------------------------------
-" vimrc-indents
-" ------------------------------------------------------------
+" vimrc-indents-tabs
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 filetype plugin indent on
+set autoindent
+set smartindent
 
-set autoindent             " automatic indent new lines
-set smartindent            " be smart about it
+set expandtab
+set nosmarttab
+set softtabstop=2
+set shiftwidth=2
+set tabstop=4
 
 " control indentation with tab
 nnoremap <Tab> >>
@@ -290,26 +262,45 @@ nnoremap <S-Tab> <<
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 
+" switch between tabbing styles
+function! Four_tab()
+  :set expandtab tabstop=4 shiftwidth=4 softtabstop=4
+endfunction
+function! Two_tab()
+  :set expandtab tabstop=2 shiftwidth=2 softtabstop=2
+endfunction
 
-" ------------------------------------------------------------
+" tabular.vim - tab align text on regexp
+" http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
+Bundle 'godlygeek/tabular'
+if exists(":Tabularize")
+  nnoremap <Leader>a :Tab /
+  vnoremap <Leader>a :Tab /
+  nnoremap <Leader>a: :Tab / :/l0
+  vnoremap <Leader>a: :Tab / :/l0
+  " nmap <Leader>a= :Tabularize /=<CR>
+  " vmap <Leader>a= :Tabularize /=<CR>
+  " nmap <Leader>a: :Tabularize /:\zs<CR>
+  " vmap <Leader>a: :Tabularize /:\zs<CR>
+endif
+
+
 " vimrc-abbreviations
-" ------------------------------------------------------------
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ab dl-  --------------------------------------------------------------------------------
 ab dl#  ################################################################################
 ab dl/  ////////////////////////////////////////////////////////////////////////////////
 ab dl/* /*******************************************************************************
+ab dl" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 ab vbresolve <% =Page.ResolveUrl("") %>
 
 ab Lorum Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 
-
-" ------------------------------------------------------------
 " vimrc-mappings
 "   map and noremap are recursive and non-recursive mapping commands
-" ------------------------------------------------------------
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <Leader>h :help 
 nnoremap <Leader>r :!!<CR>
 nnoremap <Leader>sh :sh<CR>
@@ -357,12 +348,10 @@ nnoremap & :&&<Enter>
 xnoremap & :&&<Enter>
 
 
-" ------------------------------------------------------------
 " vimrc-sessions
+"   LEADER: w
 "   sessions are useful for saving all open tabs/buffers/panes
-"
-" LEADERKEY: w
-" ------------------------------------------------------------
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <Leader>ws :mksession .vim-session
 
 " automatically load session file in cwd if it exists
@@ -377,14 +366,10 @@ endfunction
 autocmd VimEnter * call RestoreSession()
 
 
-
-" ------------------------------------------------------------
 " vimrc-splits
+"   LEADER: s, v, w, Ctrl
 "   vv/ss split current pane
-"   C-n opens new window in split
-"
-" LEADERKEY: s, v, w, Ctrl
-" ------------------------------------------------------------
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <silent> vv <C-w>v
 nnoremap <silent> ss <C-w>s
 
@@ -404,14 +389,11 @@ nnoremap < 9<C-w><
 nnoremap <Leader>wm <C-w>_
 
 
-
-" ------------------------------------------------------------
 " vimrc-tabs
+"   LEADER: t
 "   left/right arrow keys move between tabs
 "   up/down reorders tabs
-"
-" LEADERKEY: t
-" ------------------------------------------------------------
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <Left>  :tabprevious<CR>
 nnoremap <Right> :tabnext<CR>
 nnoremap <Up>    :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
@@ -422,16 +404,14 @@ nnoremap <Leader>tn :tabnew<CR>
 nnoremap <Leader>tb <C-o>:tab ball<CR>
 
 
-
-" ------------------------------------------------------------
 " vimrc-text-objects
-"   http://blog.carbonfive.com/2011/10/17/vim-text-objects-the-definitive-guide/
-"   http://yanpritzker.com/2011/12/16/learn-to-speak-vim-verbs-nouns-and-modifiers/
-"
 "   verbs         (v)isual, (c)hange, (d)elete, (y)ank
 "   modifiers     (i)nside, (a)round, (t)ill, (f)ind
 "   text objects  (w)ord, (s)entence, (p)aragraph, (b)lock, (t)ag
-" ------------------------------------------------------------
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"   http://blog.carbonfive.com/2011/10/17/vim-text-objects-the-definitive-guide/
+"   http://yanpritzker.com/2011/12/16/learn-to-speak-vim-verbs-nouns-and-modifiers/
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'kana/vim-textobj-user'
 " noun (i)ndent block
 Bundle 'michaeljsmith/vim-indent-object'
@@ -455,21 +435,19 @@ Bundle 'nathanaelkane/vim-indent-guides'
 " Bundle 'vim-scripts/BlockDiff'
 
 
-" ------------------------------------------------------------
 " vimrc-autocomplete
-"   w/ neocomplcache
-" ------------------------------------------------------------
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'Valloric/YouCompleteMe'
-
 " obsoled neocomplcache
 " Bundle 'Shougo/neocomplcache'
 " Bundle 'Shougo/neosnippet'
+" unite.vim tutorial (can act like ctrl-p, ack, yankring and lustyjuggler)
+" http://bling.github.io/blog/2013/06/02/unite-dot-vim-the-plugin-you-didnt-know-you-need/
 " Bundle 'Shougo/unite.vim'
 
 
-" ------------------------------------------------------------
 "   vimrc-misc-utilities
-" ------------------------------------------------------------
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'Lokaltog/vim-powerline'
 
 " Control-P - fuzzy file finder, MRU, buffer explorer
@@ -480,6 +458,7 @@ let g:ctrlp_max_height = 15
 
 " file viewer
 Bundle 'scrooloose/nerdtree'
+nnoremap \t :NERDTreeToggle<CR>
 
 " gundo.vim - visual undo tree
 Bundle 'sjl/gundo.vim'
@@ -489,25 +468,3 @@ if has("persistent_undo")
   set undodir=~/.vim/undodir
   set undofile
 endif
-
-" tabular.vim - tab align text on regexp
-" http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
-Bundle 'godlygeek/tabular'
-if exists(":Tabularize")
-  nnoremap <Leader>a :Tab /
-  vnoremap <Leader>a :Tab /
-  nnoremap <Leader>a: :Tab / :/l0
-  vnoremap <Leader>a: :Tab / :/l0
-  " nmap <Leader>a= :Tabularize /=<CR>
-  " vmap <Leader>a= :Tabularize /=<CR>
-  " nmap <Leader>a: :Tabularize /:\zs<CR>
-  " vmap <Leader>a: :Tabularize /:\zs<CR>
-endif
-
-" switch between tabbing styles
-function! Four_tab()
-  :set expandtab tabstop=4 shiftwidth=4 softtabstop=4
-endfunction
-function! Two_tab()
-  :set expandtab tabstop=2 shiftwidth=2 softtabstop=2
-endfunction
