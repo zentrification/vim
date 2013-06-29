@@ -557,6 +557,11 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'sjl/gundo.vim'
 nnoremap <F5> :GundoToggle<CR>
 
+if has("persistent_undo")
+  set undodir=~/.vim/undodir
+  set undofile
+endif
+
 " tabular.vim - tab align text on regexp
 " http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
 Bundle 'godlygeek/tabular'
