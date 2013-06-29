@@ -271,17 +271,8 @@ endfunction
 " tabular.vim - tab align text on regexp
 " http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
 Bundle 'godlygeek/tabular'
-if exists(":Tabularize")
-  nnoremap <Leader>a :Tab /
-  vnoremap <Leader>a :Tab /
-  nnoremap <Leader>a: :Tab / :/l0
-  vnoremap <Leader>a: :Tab / :/l0
-  " nmap <Leader>a= :Tabularize /=<CR>
-  " vmap <Leader>a= :Tabularize /=<CR>
-  " nmap <Leader>a: :Tabularize /:\zs<CR>
-  " vmap <Leader>a: :Tabularize /:\zs<CR>
-endif
-
+nnoremap <Leader>a V}:Tab /
+vnoremap <Leader>a :Tab /
 
 " vimrc-abbreviations
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
