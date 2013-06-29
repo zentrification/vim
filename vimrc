@@ -548,6 +548,9 @@ Bundle 'Lokaltog/vim-powerline'
 
 " Control-P - fuzzy file finder, MRU, buffer explorer
 Bundle 'kien/ctrlp.vim'
+let g:ctrlp_match_window_bottom = 0
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_max_height = 15
 
 " gundo.vim - visual undo tree
 Bundle 'sjl/gundo.vim'
