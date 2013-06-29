@@ -138,6 +138,10 @@ set timeoutlen=350                    " Time to wait after ESC (default causes a
 set encoding=utf-8
 " set clipboard+=unnamed
 
+" enable per project .vimrc, secure by disabling shell/autocmd
+set exrc
+set secure
+
 
 "  vimrc-backups
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
