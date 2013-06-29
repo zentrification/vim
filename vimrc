@@ -472,7 +472,8 @@ endif
 set tags=./tags,tags
 
 Bundle 'majutsushi/tagbar'
-Bundle 'vim-scripts/taglist.vim'
-" nnoremap <silent> <F8> :TlistToggle<CR>
-" nmap <Leader>tla <Esc>:TlistAddFilesRecursive ./ *rb
+nnoremap \tb :TagbarToggle<CR>
 
+Bundle 'vim-scripts/taglist.vim'
+nnoremap \tl :TlistToggle<CR>
+" nmap <Leader>tla <Esc>:TlistAddFilesRecursive ./ *rb
