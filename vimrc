@@ -18,6 +18,7 @@
 " |vimrc-theme-colors|
 " |vimrc-visual-cues|
 " |vimrc-text-formatting|
+" |vimrc-indents|
 "
 " |vimrc-abbreviations|
 " |vimrc-mappings|
@@ -25,7 +26,6 @@
 " |vimrc-splits|
 " |vimrc-tabs|
 " |vimrc-text-objects|
-" |vimrc-indents|
 "
 " |vimrc-autocomplete|
 " |vimrc-misc-utilities|
@@ -73,11 +73,9 @@ let mapleader = ';'
 
 
 
-" ------------------------------------------------------------
 " vimrc-vundle
-"
-" LEADERKEY: b
-" ------------------------------------------------------------
+"   LEADERKEY: b
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible                  " be iMproved
 filetype off                      " required by vundle
 set rtp+=~/.vim/bundle/vundle/    " let Vundle manage Vundle
@@ -148,7 +146,6 @@ nnoremap <Leader>rv :RV
 set history=100000                    " lots of command line history
 set cf                                " error files / jumping
 set ffs=unix,dos,mac                  " use correct line terminators
-filetype plugin indent on             " enable indenting (required for Vundle)
 set isk+=_,$,@,%,#,-                  " none word dividers
 set viminfo='1000,f1,:100,@100,/20
 set modeline                          " make sure modeline support is enabled
@@ -260,13 +257,12 @@ nnoremap \l :nohlsearch<CR>
 nnoremap \i :set incsearch!<CR>
 nnoremap \h :set hlsearch!<CR>
 
+
 " ------------------------------------------------------------
 " vimrc-text-formatting
 "   read this blog post on tabs
 "   http://tedlogan.com/techblog3.html
 " ------------------------------------------------------------
-set autoindent             " automatic indent new lines
-set smartindent            " be smart about it
 set nowrap                 " do not wrap lines
 set softtabstop=2          " yep, two
 set shiftwidth=2           " ..
@@ -274,11 +270,25 @@ set tabstop=4
 set expandtab              " expand tabs to spaces
 set nosmarttab             " fuck tabs
 set formatoptions+=n       " support for numbered/bullet lists
-set textwidth=160          " wrap at 80 no 160 chars by default
+set textwidth=160          " wrap at 160 chars by default
 set virtualedit=block      " allow virtual edit in visual block ..
 " highlight trailing whitespace as '~' and tabs as '>'
 set list listchars=trail:~,tab:>.
 
+
+" ------------------------------------------------------------
+" vimrc-indents
+" ------------------------------------------------------------
+filetype plugin indent on
+
+set autoindent             " automatic indent new lines
+set smartindent            " be smart about it
+
+" control indentation with tab
+nnoremap <Tab> >>
+nnoremap <S-Tab> <<
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
 
 
 " ------------------------------------------------------------
@@ -341,12 +351,6 @@ nnoremap <C-y> 3<C-y>
 
 " create fold based on current indent
 nnoremap <Leader>fi V}kzf
-
-"Key mapping for textmate-like indentation
-"nmap <D-[> <<
-"nmap <D-]> >>
-"vmap <D-[> <gv
-"vmap <D-]> >gv
 
 " make & trigger :&& so it preserves flags
 nnoremap & :&&<Enter>
@@ -442,25 +446,13 @@ Bundle 'vim-scripts/tComment'
 Bundle 'Raimondi/delimitMate'
 " extend % to more languages
 Bundle 'tsaleh/vim-matchit'
-" diff two visual blocks
-" Bundle 'vim-scripts/BlockDiff'
 Bundle 'nathanaelkane/vim-indent-guides'
 " let g:indent_guides_auto_colors = 0
 " autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
 " autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 
-
-" ------------------------------------------------------------
-" vimrc-indents
-"   left/right keys (un)indent text in visual mode
-" ------------------------------------------------------------
-vnoremap <Left> <gv
-vnoremap <Right> >gv
-
-nnoremap <Tab> >>
-nnoremap <S-Tab> <<
-vnoremap <Tab> >gv
-vnoremap <S-Tab> <gv
+" diff two visual blocks
+" Bundle 'vim-scripts/BlockDiff'
 
 
 " ------------------------------------------------------------
