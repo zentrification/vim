@@ -225,12 +225,11 @@ nnoremap <Leader>csv :colorscheme vividchalk<CR>
 syntax on
 set hlsearch
 
-if $TERM =~ '256'
+if $TERM =~ '256' || $COLORTERM == "gnome-terminal"
   set t_Co=256
   " colorscheme ir_black
   set background=dark
   colorscheme solarized
-  let g:solarized_termtrans=1
   let g:solarized_termtrans=1
 endif
 
@@ -238,7 +237,6 @@ endif
 " highlight StatusLineNC    ctermfg=Black ctermbg=DarkGrey cterm=bold
 " highlight StatusLine      ctermbg=Black ctermfg=LightGrey
 " highlight SpecialKey ctermfg=DarkGray ctermbg=Black
-
 
 
 " ------------------------------------------------------------
