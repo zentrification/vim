@@ -570,3 +570,11 @@ if exists(":Tabularize")
   " nmap <Leader>a: :Tabularize /:\zs<CR>
   " vmap <Leader>a: :Tabularize /:\zs<CR>
 endif
+
+" switch between tabbing styles
+function! Four_tab()
+  :set expandtab tabstop=4 shiftwidth=4 softtabstop=4
+endfunction
+function! Two_tab()
+  :set expandtab tabstop=2 shiftwidth=2 softtabstop=2
+endfunction
