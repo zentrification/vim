@@ -27,6 +27,7 @@
 "
 " vimrc-autocomplete
 " vimrc-misc-utilities
+" vimrc-tags
 
 
 " vimrc-todo-list
@@ -38,10 +39,6 @@
 " 3. config's to pimp
 "     http://amix.dk/vim/vimrc.html
 "     https://github.com/sjl/dotfiles/blob/master/vim/.vimrc
-" 4. ctags, cscope, taglist
-"     Bundle 'vim-scripts/taglist.vim'
-"     nnoremap <silent> <F8> :TlistToggle<CR>
-"     nmap <Leader>tla <Esc>:TlistAddFilesRecursive ./ *rb
 
 
 " vimrc-plugins-watching
@@ -468,3 +465,14 @@ if has("persistent_undo")
   set undodir=~/.vim/undodir
   set undofile
 endif
+
+
+"   vimrc-tags
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set tags=./tags,tags
+
+Bundle 'majutsushi/tagbar'
+Bundle 'vim-scripts/taglist.vim'
+" nnoremap <silent> <F8> :TlistToggle<CR>
+" nmap <Leader>tla <Esc>:TlistAddFilesRecursive ./ *rb
+
