@@ -457,6 +457,11 @@ Bundle 'nathanaelkane/vim-indent-guides'
 vnoremap <Left> <gv
 vnoremap <Right> >gv
 
+nnoremap <Tab> >>
+nnoremap <S-Tab> <<
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
+
 
 " ------------------------------------------------------------
 " vimrc-autocomplete
