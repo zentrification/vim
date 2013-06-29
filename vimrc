@@ -93,6 +93,7 @@ Bundle 'groenewege/vim-less'
 Bundle 'pangloss/vim-javascript'
 Bundle 'itspriddle/vim-jquery'
 Bundle 'vim-scripts/vim-json-bundle'
+Bundle 'StanAngeloff/php.vim'
 Bundle 'slim-template/vim-slim'
 
 " ruby
@@ -423,6 +424,7 @@ Bundle 'vim-scripts/tComment'
 Bundle 'Raimondi/delimitMate'
 " extend % to more languages
 Bundle 'tsaleh/vim-matchit'
+Bundle 'vim-scripts/closetag.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 " let g:indent_guides_auto_colors = 0
 " autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
