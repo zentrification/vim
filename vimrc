@@ -550,6 +550,9 @@ let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_match_window_reversed = 0
 let g:ctrlp_max_height = 15
 
+" file viewer
+Bundle 'scrooloose/nerdtree'
+
 " gundo.vim - visual undo tree
 Bundle 'sjl/gundo.vim'
 nnoremap <F5> :GundoToggle<CR>
