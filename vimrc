@@ -473,7 +473,15 @@ set tags=./tags,tags
 
 Bundle 'majutsushi/tagbar'
 nnoremap \tb :TagbarToggle<CR>
+let g:tagbar_type_coffee = {
+  \ 'ctagstype' : 'coffee',
+  \ 'kinds' : [
+  \   'f:functions',
+  \   'v:variables'
+  \ ],
+  \ }
 
 Bundle 'vim-scripts/taglist.vim'
+let g:tlist_coffee_settings = 'coffee;f:function;v:variable'
 nnoremap \tl :TlistToggle<CR>
 " nmap <Leader>tla <Esc>:TlistAddFilesRecursive ./ *rb
