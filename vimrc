@@ -278,6 +278,11 @@ Bundle 'godlygeek/tabular'
 nnoremap <Leader>a V}:Tab /
 vnoremap <Leader>a :Tab /
 
+Bundle 'nathanaelkane/vim-indent-guides'
+let g:indent_guides_guide_size = 1
+let g:indent_guides_start_level = 3
+
+
 " vimrc-abbreviations
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ab dl-  --------------------------------------------------------------------------------
@@ -420,10 +425,6 @@ Bundle 'Raimondi/delimitMate'
 " extend % to more languages
 Bundle 'tsaleh/vim-matchit'
 Bundle 'vim-scripts/closetag.vim'
-Bundle 'nathanaelkane/vim-indent-guides'
-" let g:indent_guides_auto_colors = 0
-" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
-" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 
 " diff two visual blocks
 " Bundle 'vim-scripts/BlockDiff'
