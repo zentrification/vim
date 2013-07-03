@@ -435,6 +435,8 @@ Bundle 'nathanaelkane/vim-indent-guides'
 " vimrc-autocomplete
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'Valloric/YouCompleteMe'
+let g:ycm_collect_identifiers_from_tags_files = 1
+
 " obsoled neocomplcache
 " Bundle 'Shougo/neocomplcache'
 " Bundle 'Shougo/neosnippet'
