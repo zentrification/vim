@@ -93,6 +93,7 @@ Bundle 'groenewege/vim-less'
 Bundle 'pangloss/vim-javascript'
 Bundle 'itspriddle/vim-jquery'
 Bundle 'vim-scripts/vim-json-bundle'
+Bundle 'StanAngeloff/php.vim'
 Bundle 'slim-template/vim-slim'
 
 " ruby
@@ -136,6 +137,10 @@ set autowrite                         " write on make/shell commands
 set timeoutlen=350                    " Time to wait after ESC (default causes an annoying delay)
 set encoding=utf-8
 " set clipboard+=unnamed
+
+" enable per project .vimrc, secure by disabling shell/autocmd
+set exrc
+set secure
 
 
 "  vimrc-backups
@@ -270,17 +275,8 @@ endfunction
 " tabular.vim - tab align text on regexp
 " http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
 Bundle 'godlygeek/tabular'
-if exists(":Tabularize")
-  nnoremap <Leader>a :Tab /
-  vnoremap <Leader>a :Tab /
-  nnoremap <Leader>a: :Tab / :/l0
-  vnoremap <Leader>a: :Tab / :/l0
-  " nmap <Leader>a= :Tabularize /=<CR>
-  " vmap <Leader>a= :Tabularize /=<CR>
-  " nmap <Leader>a: :Tabularize /:\zs<CR>
-  " vmap <Leader>a: :Tabularize /:\zs<CR>
-endif
-
+nnoremap <Leader>a V}:Tab /
+vnoremap <Leader>a :Tab /
 
 " vimrc-abbreviations
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -423,6 +419,7 @@ Bundle 'vim-scripts/tComment'
 Bundle 'Raimondi/delimitMate'
 " extend % to more languages
 Bundle 'tsaleh/vim-matchit'
+Bundle 'vim-scripts/closetag.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 " let g:indent_guides_auto_colors = 0
 " autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
