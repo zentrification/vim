@@ -1,12 +1,12 @@
 '0 - open previous file (nice after relaunch)
 
 # commands
-CTRL + f - change to command-line window during a command
+CTRL + f     - change to command-line window during a command
 :bufdo {cmd} - repeat command for each buffer in the list
-:,!command  - replace current line with command output
-:%!filter   - put whole file through filter
-:!filterput - put (visual) selection through filter
-:opt - view the list of options
+:,!command   - replace current line with command output
+:%!filter    - put whole file through filter
+:!filterput  - put (visual) selection through filter
+:opt         - view the list of options
 
 
 # editing
@@ -24,8 +24,8 @@ gq | gw - hard wrap {motion} and move cursor to the end of the selection | keep 
 
 
 # history
-q/ - search history
-q: - command history
+q/      - search history
+q:      - command history
 q/ | q: - search string | command-line window
 
 
@@ -40,22 +40,22 @@ ge / gE - skip backwards at the ending of the words
 
 # repeating
 ; | , - repeat latest f, t, F, T in the normal | opposite direction
-@: - repeat the previous command-line command
+@:    - repeat the previous command-line command
 
 
 # registers
-<C-r>0 - paste text from register 0 in insert mode
+<C-r>0      - paste text from register 0 in insert mode
 <C-r><C-p>0 - paste text w/ proper indentation
-" - unnamed register (yank and execute macro @")
-0 - most recently yanked text
-1 to 9 - historic delete registers
-_ - black hole register
-- - small delete register (any change one line or less)
-. - last text inserted register
-% - current filename register
-= - expression register
-: | / - last command | last search register
-+ | * - system clipboard
+"           - unnamed register (yank and execute macro @")
+0           - most recently yanked text
+1 to 9      - historic delete registers
+_           - black hole register
+-           - small delete register (any change one line or less)
+.           - last text inserted register
+%           - current filename register
+=           - expression register
+: | /       - last command | last search register
++ | *       - system clipboards
 
 # searching
 / CTRL + P, CTRL + N - move through the search history while searching
@@ -66,5 +66,5 @@ gv - reselects the last selection
 
 
 # yanking
-"_x - delete without updating clipboard or yank buffer
+"_x                 - delete without updating clipboard or yank buffer
 "= {expression}<CR> - caculate expression and put it in clipboard
