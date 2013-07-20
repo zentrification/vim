@@ -10,8 +10,6 @@
 
 g; g,
   navigate list of previous positions in file
-gJ
-  join lines WITHOUT spaces
 
 
 # marks

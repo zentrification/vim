@@ -1,13 +1,6 @@
-Vim setup with
-- github.com/gmarik/vundle
-- few color schemes I like
-
-Install
--------
-curl https://raw.github.com/zentrification/vim/master/installer | sh
+My vim config
 
 Credit
 ------
-vimrc heavily influenced by 
+vimrc heavily influenced by
 https://github.com/rtomayko/dotfiles/blob/rtomayko/.vimrc
-
