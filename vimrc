@@ -447,7 +447,8 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 
 "   vimrc-misc-utilities
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'bling/vim-airline'
+let g:airline_theme='solarized'
 
 " Control-P - fuzzy file finder, MRU, buffer explorer
 Bundle 'kien/ctrlp.vim'
