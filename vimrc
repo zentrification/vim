@@ -245,8 +245,21 @@ set formatoptions+=n       " support for numbered/bullet lists
 set textwidth=160          " wrap at 160 chars by default
 set virtualedit=block      " allow virtual edit in visual block ..
 " highlight trailing whitespace as '~' and tabs as '>'
-set list listchars=trail:~,tab:>.
+set list listchars=tab:▸\ ,trail:❤
 
+function! Preserve(command)
+  " save last search and curso"
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  execute a:command
+  let @/=_s
+  call cursor(l, c)
+endfunction
+
+" strip trailing whitespace and global reformat
+nnoremap _$ :call Preserve("%s/\\s\\+$//e")<CR>
+nnoremap _= :call Preserve("normal gg=G")<CR>
 
 " vimrc-indents-tabs
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
