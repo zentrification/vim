@@ -1,10 +1,9 @@
 " vimrc-todo-list
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 1. break out configs into their own dirs like
-"     https://github.com/skwp/dotfiles/tree/master/vim/
-" 2. integrated X11 clipboard with vim registers
+" 1. integrated X11 clipboard with vim registers
 "     http://vim.wikia.com/wiki/Accessing_the_system_clipboard
-" 3. config's to pimp
+" 2. config's to pimp
+"     https://github.com/skwp/dotfiles/blob/master/vim/vundles.vim
 "     http://amix.dk/vim/vimrc.html
 "     https://github.com/sjl/dotfiles/blob/master/vim/.vimrc
 

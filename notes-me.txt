@@ -1,4 +1,7 @@
-'0 - open previous file (nice after relaunch)
+'0        - open previous file (nice after relaunch)
+:set all  - show all values
+:set foo? - show value of foo
+:set foo& - reset foot to default value
 
 
 # commands
@@ -25,9 +28,8 @@ gq | gw - hard wrap {motion} and move cursor to the end of the selection | keep 
 
 
 # history
-q/      - search history
-q:      - command history
-q/ | q: - search string | command-line window
+q/ - search history
+q: - command history
 
 
 # marks
