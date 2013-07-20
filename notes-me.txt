@@ -1,33 +1,70 @@
-'0
-  open previous file (nice after relaunch)
+'0 - open previous file (nice after relaunch)
+
+# commands
+CTRL + f - change to command-line window during a command
+:bufdo {cmd} - repeat command for each buffer in the list
+:,!command  - replace current line with command output
+:%!filter   - put whole file through filter
+:!filterput - put (visual) selection through filter
+:opt - view the list of options
+
+
+# editing
+I - insert at begining of line
+X - delete character before cursor
+
 
 # ex prompt
-##########################################################################################
 :%!ruby -pe "gsub /classA/, 'classB'"
 
-# g-commands
-##########################################################################################
 
-g; g,
-  navigate list of previous positions in file
+# g-commands
+g; | g, - move cursor backwards | forward in the changelist to the position of the last edit
+gq | gw - hard wrap {motion} and move cursor to the end of the selection | keep cursor where it was
+
+
+# history
+q/ - search history
+q: - command history
+q/ | q: - search string | command-line window
 
 
 # marks
-##########################################################################################
-''
-  move to previous mark
-`a
-  move to line AND column of mark
+'' - move to previous mark
+`a - move to line AND column of mark a
+
+
+# movement
+ge / gE - skip backwards at the ending of the words
+
+
+# repeating
+; | , - repeat latest f, t, F, T in the normal | opposite direction
+@: - repeat the previous command-line command
 
 
 # registers
-##########################################################################################
-<C-r>0
-  paste test from register 0 in insert mode
-<C-r><C-p>0
-  same as above but fixes indentation
+<C-r>0 - paste text from register 0 in insert mode
+<C-r><C-p>0 - paste text w/ proper indentation
+" - unnamed register (yank and execute macro @")
+0 - most recently yanked text
+1 to 9 - historic delete registers
+_ - black hole register
+- - small delete register (any change one line or less)
+. - last text inserted register
+% - current filename register
+= - expression register
+: | / - last command | last search register
++ | * - system clipboard
+
+# searching
+/ CTRL + P, CTRL + N - move through the search history while searching
+
+
+# visual
+gv - reselects the last selection
+
 
 # yanking
-##########################################################################################
-"_x
-  delete without updating clipboard or yank buffer
+"_x - delete without updating clipboard or yank buffer
+"= {expression}<CR> - caculate expression and put it in clipboard
