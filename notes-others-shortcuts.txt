@@ -22,39 +22,13 @@ g] - works like the ctrl-] but lets you to choose the tag occurrence
 [I and ]I - display all lines containing the keyword under and after the cursor
 
 # Basic movement (all work with a count)
-w / W - skip forward at begining of the words
-e / E - skip forward at the ending of the words
-b / B - skip backwards at the begining of the words
 ge / gE - skip backwards at the ending of the words
-f[character]/F[char] - jumps at the first [character] after the carret (forward / backwards)
-t[character] / T[chacterter]- jumps at the first letter before [charter] after the carret (forward / backwards)
 ; | , - repeat latest f, t, F, T in the normal | opposite direction
-c[no]t[charter/symbol] - change til the [no(optional)]th [character]
-
-CTRL + U / CTRL + D - move half page up / down
-H / M / L - move at the top / middle / bottom of the screen
-gg / G - go to the top / bottom of the file
-* / # - searches forward / backwards for the word on which the carret is placed
-/[word] / ?[word] - search forward / backwards for [word]
-n / N - go to next / previous search result in the direction you were going
-CTRL + R, / - j
-[[ / ]] - jump to the next / previous "{" on column 0
-][ / [] - jump to the next / previous "}" on column 0
-% - jump to the matching { / } / ( / ) (MatchIt plugin needed to find matching html tags etc.)
-m[letter] / '[letter] / '' - mark [letter] / go to mark [letter] / go to the last place before jump (:h marks to read more)
 
 # Basic Editing
-i / I / a / A - enter insert mode by inserting / (at the begining of the line) / appending / (at the eol)
-o / O - insert new line after / before current line
-x / X - delete character after / before cursor
-d[motion/textobject] / dd - delete[motion] / delete current line
-c[motion/textobject] - change[motion/textobject]
-R / r - replace until ESC press / a single char
+I - insert at begining of line
+X - delete character before cursor
 
-yy / Y / y[motion] - yank the current line / motion
-p / P - paste after / before the current line or carret (if a word were yanked)
-J / gJ - join the current line with the next line with a / no space between them
-v / V / CTRL + V - enter in visual character / line / block visual mode
 gv - reselects the latest visual selection
 
 # Buffers
@@ -82,16 +56,20 @@ CTRL + W, c - close the current window
 :mksession [file.vim] - saves a session named file.vim
 mvim -S ~/[file.vim] - launch vim with a session saved in file.vim (in terminal)
 
-# Vim command line
-/ CTRL + P, CTRL + N - move through the search history
+# searching
+/ CTRL + P, CTRL + N - move through the search history while searching
+
+# history
+q/ - search history
+q: - command history
 q/ | q: - search string | command-line window
+
+# commands
 CTRL + f - change to command-line window during a command
 
-# Quickies
-} | ) - start of the current sentence | paragraph
-ddp - moves a line down
-@import "compass";
+# visual
 gv - reselects the last selection
+
 @: - repeat the previous command-line command
 "= {expression}<CR> - caculate expression and put it in clipboard
 "+{yank} - Yank in OS clipboard
