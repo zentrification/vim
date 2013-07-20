@@ -192,10 +192,12 @@ set mouse=a                " Mouse in all modes
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-vividchalk'
 Bundle 'tomasr/molokai'
+Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 
 nnoremap <Leader>csm :colorscheme molokai<CR>
 nnoremap <Leader>css :colorscheme solarized<CR>
 nnoremap <Leader>csv :colorscheme vividchalk<CR>
+nnoremap <Leader>cst :colorscheme Tomorrow-Night<CR>
 
 syntax on
 set hlsearch
@@ -204,8 +206,8 @@ if $TERM =~ '256' || $COLORTERM == "gnome-terminal"
   set t_Co=256
   " colorscheme ir_black
   set background=dark
-  colorscheme solarized
   let g:solarized_termtrans=1
+  colorscheme solarized
 endif
 
 " highlight Comment         ctermfg=DarkGrey guifg=#444444
