@@ -1,5 +1,6 @@
 '0 - open previous file (nice after relaunch)
 
+
 # commands
 CTRL + f     - change to command-line window during a command
 :bufdo {cmd} - repeat command for each buffer in the list
@@ -57,14 +58,10 @@ _           - black hole register
 : | /       - last command | last search register
 + | *       - system clipboards
 
+
 # searching
 / CTRL + P, CTRL + N - move through the search history while searching
 
 
 # visual
 gv - reselects the last selection
-
-
-# yanking
-"_x                 - delete without updating clipboard or yank buffer
-"= {expression}<CR> - caculate expression and put it in clipboard
