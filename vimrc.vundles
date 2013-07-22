@@ -12,6 +12,7 @@ let g:ctrlp_match_window_reversed = 0
 let g:ctrlp_max_height = 15
 Bundle 'sjl/gundo.vim'
 Bundle 'scrooloose/nerdtree'
+" Bundle 'AndrewRadev/splitjoin.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'bling/vim-airline'
 let g:airline_theme='solarized'
@@ -39,6 +40,7 @@ Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Bundle 'vim-scripts/aspnet.vim--Abshire'
 autocmd BufRead,BufNewFile *.aspx set filetype=aspnet
 autocmd BufRead,BufNewFile *.ascx set filetype=aspnet
+" Bundle 'othree/html5.vim'
 Bundle 'StanAngeloff/php.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-fugitive'
