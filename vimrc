@@ -8,20 +8,6 @@
 "     https://github.com/sjl/dotfiles/blob/master/vim/.vimrc
 
 
-" vimrc-plugins-watching
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Bundle 'scrooloose/syntastic/'
-" Bundle 'tpope/vim-repeat'
-" https://github.com/hsitz/VimOrganizer
-" https://github.com/Lokaltog/vim-easymotion
-" https://github.com/henrik/vim-indexed-search
-" https://github.com/xolox/vim-session
-" https://github.com/spiiph/vim-space
-" https://github.com/vim-scripts/YankRing.vim
-" https://github.com/mileszs/ack.vim
-" https://github.com/robgleeson/hammer.vim
-
-
 " vimrc-leader
 "   setup leader (need to do this before any mappings)
 "   not crazy about ;

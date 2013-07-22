@@ -1,4 +1,3 @@
-" util function to preserve history and cursor position
 function! Preserve(command)
   " save last search and curso"
   let _s=@/
@@ -17,80 +16,82 @@ function! Two_tab()
   :set expandtab tabstop=2 shiftwidth=2 softtabstop=2
 endfunction
 
-nnoremap \i :set incsearch!<CR>
-nnoremap \h :set hlsearch!<CR>
-nnoremap \l :nohlsearch<CR>
-nnoremap <Leader>sn :set invnumber<CR>
-nnoremap <Leader>sp :set invpaste paste?<CR>
-
-" load up vimrc
-nnoremap <Leader>v :source ~/.vimrc<CR>
-" make Y consistend with C and D
-nnoremap Y y$
-
-" make & trigger :&& so it preserves flags
-nnoremap & :&&<Enter>
-xnoremap & :&&<Enter>
-
 " strip trailing whitespace and global reformat
 nnoremap _$ :call Preserve("%s/\\s\\+$//e")<CR>
 nnoremap _= :call Preserve("normal gg=G")<CR>
-
-" indentation
-nnoremap <Tab> >>
-nnoremap <S-Tab> <<
-vnoremap <Tab> >gv
-vnoremap <S-Tab> <gv
-
-" escape from insert/visual mode
-inoremap jk <ESC>
-inoremap jkl <ESC>A
-cnoremap jk <ESC>
-
-" explorer
-nnoremap <Leader>e :e.<CR>
-nnoremap <Leader>se :Se.<CR>
-
-" fold current indent
-nnoremap <Leader>fi V}kzf 
-
-" search
-nnoremap <Leader>s :%s/
-
-" quit/write
-nnoremap <Leader>q :q<CR>
-nnoremap <Leader>w :w<CR>
-inoremap <Leader>w <C-o>:w<CR><Esc>
-nnoremap <Leader>x :x<CR>
-inoremap <Leader>x <C-o>:x<CR>
-
-" scroll the viewport faster
-nnoremap <C-e> 3<C-e>
-nnoremap <C-y> 3<C-y>
-
-" splits
-nnoremap <silent> vv <C-w>v
-nnoremap <silent> ss <C-w>s
-" navigate splits with Ctrl + j/k/h/l
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
+" make & trigger :&& so it preserves flags
+nnoremap & :&&<Enter>
+xnoremap & :&&<Enter>
 " horizontal split resizing
 nnoremap + 5<C-w>+
 nnoremap - 5<C-w>-
 " vertical split resizing
 nnoremap > 9<C-w>>
 nnoremap < 9<C-w><
-" quickly maximize
-nnoremap <Leader>wm <C-w>_
-
-
-" tabs
+" escape from insert/visual mode
+inoremap jk <ESC>
+inoremap jkl <ESC>A
+cnoremap jk <ESC>
+" splits
+nnoremap <silent> ss <C-w>s
+nnoremap <silent> vv <C-w>v
+" make Y consistend with C and D
+nnoremap Y y$
+nnoremap <F5> :GundoToggle<CR>
+" indentation
+nnoremap <Tab> >>
+nnoremap <S-Tab> <<
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
+" tab navigation
 nnoremap <Left>  :tabprevious<CR>
 nnoremap <Right> :tabnext<CR>
 nnoremap <Up>    :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <Down>  :execute 'silent! tabmove ' . tabpagenr()<CR>
+" scroll the viewport faster
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
+" navigate splits with Ctrl + j/k/h/l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+" toggles
+nnoremap \h :set hlsearch!<CR>
+nnoremap \i :set incsearch!<CR>
+nnoremap \l :nohlsearch<CR>
+nnoremap \t :NERDTreeToggle<CR>
+" tabular aligning
+nnoremap <Leader>a V}:Tab /
+vnoremap <Leader>a :Tab /
+" vundle
+nmap <Leader>bi  :BundleInstall<CR>
+nmap <Leader>bu  :BundleInstall!<CR>
+nmap <Leader>bc  :BundleClean<CR>
+" colors
+nnoremap <Leader>csm :colorscheme molokai<CR>
+nnoremap <Leader>css :colorscheme solarized<CR>
+nnoremap <Leader>csv :colorscheme vividchalk<CR>
+nnoremap <Leader>cst :colorscheme Tomorrow-Night<CR>
+" explorer
+nnoremap <Leader>e :e.<CR>
+" fold current indent
+nnoremap <Leader>fi V}kzf 
+" search
+nnoremap <Leader>q :q<CR>
+" rails.vim
+nnoremap <Leader>rt :RT 
+nnoremap <Leader>rs :RS 
+nnoremap <Leader>rv :RV 
+nnoremap <Leader>s :%s/
+nnoremap <Leader>sn :set invnumber<CR>
+nnoremap <Leader>sp :set invpaste paste?<CR>
 nnoremap <Leader>t  :tabnew<CR>:e.<CR>
 nnoremap <Leader>tn :tabnew<CR>
 nnoremap <Leader>tb <C-o>:tab ball<CR>
+nnoremap <Leader>v :source ~/.vimrc<CR>
+nnoremap <Leader>w :w<CR>
+inoremap <Leader>w <C-o>:w<CR><Esc>
+nnoremap <Leader>x :x<CR>
+" maximize window
+nnoremap <Leader>wm <C-w>_
