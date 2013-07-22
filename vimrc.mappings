@@ -68,6 +68,7 @@ nnoremap <Leader>rt :RT
 nnoremap <Leader>rs :RS 
 nnoremap <Leader>rv :RV 
 nnoremap <Leader>s :%s/
+vnoremap <Leader>s :s/
 nnoremap <Leader>sn :set invnumber<CR>
 nnoremap <Leader>sp :set invpaste paste?<CR>
 nnoremap <Leader>t  :tabnew<CR>:e.<CR>

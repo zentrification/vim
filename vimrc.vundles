@@ -68,11 +68,13 @@ Bundle 'slim-template/vim-slim'
 " http://blog.carbonfive.com/2011/10/17/vim-text-objects-the-definitive-guide/
 " http://yanpritzker.com/2011/12/16/learn-to-speak-vim-verbs-nouns-and-modifiers/
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 'kana/vim-textobj-user'
-Bundle 'michaeljsmith/vim-indent-object'
-Bundle 'nelstrom/vim-textobj-rubyblock'
-Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/tComment'
+" Bundle 'coderifous/textobj-word-column.vim'
+Bundle 'michaeljsmith/vim-indent-object'
+Bundle 'tpope/vim-surround'
+Bundle 'nelstrom/vim-textobj-rubyblock'
+" Bundle 'lucapette/vim-textobj-underscore'
+Bundle 'kana/vim-textobj-user'
 
 "   vimrc-tags
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
