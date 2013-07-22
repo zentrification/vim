@@ -19,6 +19,9 @@ nnoremap <silent> ss <C-w>s
 nnoremap <silent> vv <C-w>v
 " make Y consistend with C and D
 nnoremap Y y$
+" paste system clipboard
+inoremap zp <C-r>*
+inoremap zP <C-r>+
 nnoremap <F5> :GundoToggle<CR>
 " indentation
 nnoremap <Tab> >>
