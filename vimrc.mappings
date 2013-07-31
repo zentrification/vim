@@ -33,6 +33,8 @@ vnoremap <S-Tab> <gv
 " tab navigation
 nnoremap <Left>  :tabprevious<CR>
 nnoremap <Right> :tabnext<CR>
+inoremap <Left>  <Esc>:tabprevious<CR>
+inoremap <Right> <Esc>:tabnext<CR>
 nnoremap <Up>    :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <Down>  :execute 'silent! tabmove ' . tabpagenr()<CR>
 " scroll the viewport faster
