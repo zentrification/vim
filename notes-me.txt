@@ -3,48 +3,47 @@
 :set foo? - show value of foo
 :set foo& - reset foot to default value
 
+:earlier 15m - go back in time 15 minutes
+:later 15m   - reverses :earlier
 
 # commands
 CTRL + f     - change to command-line window during a command
 :bufdo {cmd} - repeat command for each buffer in the list
-:,!command   - replace current line with command output
+:,!command   - command output replaces current line
+:r!command   - command output on new line
 :%!filter    - put whole file through filter
 :!filterput  - put (visual) selection through filter
 :opt         - view the list of options
 
+:g/something/y A - yank all lines matching something into register A
 
 # editing
 I - insert at begining of line
 X - delete character before cursor
 
-
 # ex prompt
 :%!ruby -pe "gsub /classA/, 'classB'"
 
-
 # g-commands
-g; | g, - move cursor backwards | forward in the changelist to the position of the last edit
+g; | g, - move forward/backword through changelist
 gq | gw - hard wrap {motion} and move cursor to the end of the selection | keep cursor where it was
-
+g+ | g- - go forward/backword through undolevels
+<C-o> / <C-i> - move forward/backwards through jumplist
 
 # history
 q/ - search history
 q: - command history
 
-
 # marks
 '' - move to previous mark
 `a - move to line AND column of mark a
 
-
 # movement
 ge / gE - skip backwards at the ending of the words
-
 
 # repeating
 ; | , - repeat latest f, t, F, T in the normal | opposite direction
 @:    - repeat the previous command-line command
-
 
 # registers
 <C-r>0      - paste text from register 0 in insert mode
@@ -60,10 +59,8 @@ _           - black hole register
 : | /       - last command | last search register
 + | *       - system clipboards
 
-
 # searching
 / CTRL + P, CTRL + N - move through the search history while searching
-
 
 # visual
 gv - reselects the last selection
