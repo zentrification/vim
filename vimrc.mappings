@@ -17,6 +17,8 @@ cnoremap jk <ESC>
 " splits
 nnoremap <silent> ss <C-w>s
 nnoremap <silent> vv <C-w>v
+" sudo write current buffer
+cmap W :w !sudo tee %
 " make Y consistend with C and D
 nnoremap Y y$
 " paste system clipboard
