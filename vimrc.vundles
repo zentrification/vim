@@ -23,20 +23,22 @@ Bundle 'mhinz/vim-startify'
 Bundle 'Valloric/YouCompleteMe'
 let g:ycm_collect_identifiers_from_tags_files = 1
 
-" matching/tag closing
+""" Tag Closing"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'vim-scripts/closetag.vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'tpope/vim-endwise'
 Bundle 'tsaleh/vim-matchit'
 
-" colors
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'tpope/vim-vividchalk'
+""" Colors """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle 'candycode.vim'
+Bundle 'Lokaltog/vim-distinguished'
+Bundle 'quanganhdo/grb256'
 Bundle 'tomasr/molokai'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+Bundle 'tpope/vim-vividchalk'
 
-" language specific
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Language Specific """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'vim-scripts/aspnet.vim--Abshire'
 autocmd BufRead,BufNewFile *.aspx set filetype=aspnet
 autocmd BufRead,BufNewFile *.ascx set filetype=aspnet
@@ -59,8 +61,7 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 Bundle 'slim-template/vim-slim'
 
-" vimrc-text-objects
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Text Objects """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " verbs         (v)isual, (c)hange, (d)elete, (y)ank
 " modifiers     (i)nside, (a)round, (t)ill, (f)ind
 " text objects  (w)ord, (s)entence, (p)aragraph, (b)lock, (t)ag
