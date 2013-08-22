@@ -25,9 +25,8 @@ nnoremap Y y$
 inoremap zp <C-r>*
 inoremap zP <C-r>+
 nnoremap <F5> :GundoToggle<CR>
+nnoremap <Tab> %
 " indentation
-nnoremap <Tab> >>
-nnoremap <S-Tab> <<
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 " tab navigation
@@ -48,10 +47,9 @@ nnoremap <C-l> <C-w>l
 " toggles
 nnoremap \h :set hlsearch!<CR>
 nnoremap \i :set incsearch!<CR>
-nnoremap \l :nohlsearch<CR>
 nnoremap \t :NERDTreeToggle<CR>
 nnoremap \tb :TagbarToggle<CR>
-nnoremap \tl :TlistToggle<CR>
+nnoremap \l :TlistToggle<CR>
 " tabular aligning
 nnoremap <Leader>a V}:Tab /
 vnoremap <Leader>a :Tab /

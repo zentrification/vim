@@ -46,9 +46,11 @@ set noswapfile
 set nowritebackup
 
 syntax on
+set gdefault
 set hlsearch
 set incsearch
 set ignorecase
+set smartcase
 
 filetype plugin indent on
 set autoindent
@@ -74,7 +76,7 @@ set splitbelow
 set whichwrap+=h,l
 
 set showmatch
-set mat=5
+set matchtime=3
 
 set wildmenu
 set wildmode=list:longest,full
