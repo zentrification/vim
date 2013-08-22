@@ -8,8 +8,8 @@ xnoremap & :&&<Enter>
 nnoremap + 5<C-w>+
 nnoremap - 5<C-w>-
 " vertical split resizing
-nnoremap > 9<C-w>>
-nnoremap < 9<C-w><
+nnoremap > 4<C-w>>
+nnoremap < 4<C-w><
 " escape from insert/visual mode
 inoremap jk <ESC>
 inoremap jkl <ESC>A
@@ -84,6 +84,7 @@ nnoremap <Leader>tb <C-o>:tab ball<CR>
 nnoremap <Leader>v :source ~/.vimrc<CR>
 nnoremap <Leader>w :w<CR>
 inoremap <Leader>w <C-o>:w<CR><Esc>
+nnoremap <Leader>ws :mksession .vim-session
 nnoremap <Leader>x :x<CR>
 " maximize window
 nnoremap <Leader>wm <C-w>_
@@ -106,4 +107,15 @@ endfunction
 function! Two_tab()
   :set expandtab tabstop=2 shiftwidth=2 softtabstop=2
 endfunction
+
+" automatically load session file in cwd if it exists
+" hrm does this fire on new tabs ?
+function! RestoreSession()
+  if argc() == 0 "vim called without arguments
+    if filereadable('.vim-session')
+      execute 'source .vim-session'
+    end
+  end
+endfunction
+autocmd VimEnter * call RestoreSession()
 

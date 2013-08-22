@@ -1,3 +1,5 @@
+" :scriptnames - lists all installed plugins
+
 " setup vundle
 filetype off
 set rtp+=~/.vim/bundle/vundle/
