@@ -10,9 +10,6 @@
 let mapleader = ';'
 set nocompatible
 
-syntax on
-filetype plugin indent on
-
 "" bundles """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if filereadable(expand("~/.vim/vimrc.vundles"))
   source ~/.vim/vimrc.vundles
@@ -48,12 +45,14 @@ set nobackup
 set noswapfile
 set nowritebackup
 
+syntax on
 set gdefault
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase
 
+filetype plugin indent on
 set autoindent
 set smartindent
 
