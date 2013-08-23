@@ -13,6 +13,7 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle 'mhinz/vim-startify'
 NeoBundle 'godlygeek/tabular'
+NeoBundle 'majutsushi/tagbar'
 
 NeoBundle 'bling/vim-airline'
 let g:airline_theme='solarized'
@@ -58,7 +59,7 @@ NeoBundle 'kana/vim-textobj-user'
 NeoBundleLazy 'vim-scripts/aspnet.vim--Abshire', {'autoload' : {'filetypes' : ['asp','aspx']}}
 NeoBundleLazy 'othree/html5.vim',                {'autoload' : {'filetypes' : ['html']}}
 NeoBundleLazy 'StanAngeloff/php.vim',            {'autoload' : {'filetypes' : ['php','php5']}}
-NeoBundleLazy 'kchmck/vim-coffee-script',        {'autoload' : {'filetypes' : ['coffee']}}
+NeoBundle 'kchmck/vim-coffee-script'
 NeoBundleLazy 'Lazytpope/vim-haml',              {'autoload' : {'filetypes' : ['haml']}}
 NeoBundleLazy 'groenewege/vim-less',             {'autoload' : {'filetypes' : ['less']}}
 NeoBundleLazy 'pangloss/vim-javascript',         {'autoload' : {'filetypes' : ['javascript']}}

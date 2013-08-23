@@ -48,8 +48,7 @@ nnoremap <C-l> <C-w>l
 nnoremap \h :set hlsearch!<CR>
 nnoremap \i :set incsearch!<CR>
 nnoremap \t :NERDTreeToggle<CR>
-nnoremap \tb :TagbarToggle<CR>
-nnoremap \l :TlistToggle<CR>
+nnoremap \b :TagbarToggle<CR>
 " tabular aligning
 nnoremap <Leader>a V}:Tab /
 vnoremap <Leader>a :Tab /
