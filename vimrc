@@ -10,9 +10,9 @@
 let mapleader = ';'
 set nocompatible
 
-"" bundles """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if filereadable(expand("~/.vim/vimrc.vundles"))
-  source ~/.vim/vimrc.vundles
+"" NeoBundle """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if filereadable(expand("~/.vim/vimrc.bundles"))
+  source ~/.vim/vimrc.bundles
 endif
 
 " set clipboard+=unnamed
@@ -52,7 +52,6 @@ set incsearch
 set ignorecase
 set smartcase
 
-filetype plugin indent on
 set autoindent
 set smartindent
 
