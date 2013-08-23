@@ -1,11 +1,7 @@
-" :scriptnames - lists all installed plugins
-
 " setup vundle
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-
-" let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 
 Bundle 'kien/ctrlp.vim'
@@ -24,6 +20,7 @@ let g:indent_guides_start_level = 3
 Bundle 'mhinz/vim-startify'
 Bundle 'Valloric/YouCompleteMe'
 let g:ycm_collect_identifiers_from_tags_files = 1
+Bundle 'marijnh/tern_for_vim'
 
 """ Tag Closing"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'vim-scripts/closetag.vim'
