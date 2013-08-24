@@ -50,6 +50,7 @@ set gdefault
 set hlsearch
 set incsearch
 set ignorecase
+set infercase
 set smartcase
 
 set autoindent
@@ -77,8 +78,9 @@ set whichwrap+=h,l
 set showmatch
 set matchtime=3
 
+set complete=.,w,b,u,k,t,i
 set wildmenu
-set wildmode=list:longest,full
+set wildmode=longest,list:longest
 set wildignore+=.DS_Store,.git,.hg,.svn
 set wildignore+=*.bmp,*.ico,*.jpg,*.jpeg,*.gif,*.png,*.tiff
 set wildignore+=*~,*.swp,*.tmp
@@ -88,6 +90,7 @@ set backspace=2            " allow backspacing over everything in insert mode
 set shortmess=filtIoOA     " shorten messages
 
 set formatoptions+=n       " support for numbered/bullet lists
+set linebreak
 set nowrap                 " do not wrap lines
 set textwidth=160          " wrap at 160 chars by default
 set virtualedit=block      " allow virtual edit in visual block ..
