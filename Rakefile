@@ -1,10 +1,21 @@
-def is_osx
+def brew_install(package, *options)
+  `brew list #{package}`
+  return if $?.success?
+  sh "brew install #{package} #{options.join ' '}"
+end
+
+def osx?
   `uname -a`.match(/Darwin/) != nil
+end
+
+def osx_dependencies
+  brew_install 'ack'
 end
 
 def osx_vim_install
   sh "brew update"
-  sh "brew install vim --with-lua --override-system-vi"
+  osx_dependencies
+  brew_install 'vim', %w(--with-lua --override-system-vi)
 end
 
 def osx_vim_clean
@@ -14,12 +25,12 @@ end
 namespace :vim do
   desc 'compile and install vim'
   task :install do
-    osx_vim_install if is_osx
+    osx_vim_install if osx?
   end
 
   desc 'recompile vim'
   task :recompile do
-    osx_vim_clean if is_osx
+    osx_vim_clean if osx?
     Rake::Task['vim:install'].invoke
   end
 end
