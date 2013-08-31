@@ -7,6 +7,14 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+if filereadable(expand("~/.vim/vimrc.bundles.neocomplete"))
+  source ~/.vim/vimrc.bundles.neocomplete
+endif
+
+if filereadable(expand("~/.vim/vimrc.bundles.tagbar"))
+  source ~/.vim/vimrc.bundles.tagbar
+endif
+
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'tpope/vim-fugitive'
@@ -14,7 +22,6 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle 'mhinz/vim-startify'
 NeoBundle 'godlygeek/tabular'
-NeoBundle 'majutsushi/tagbar'
 NeoBundle 'marijnh/tern_for_vim'
 
 NeoBundle 'bling/vim-airline'
@@ -28,10 +35,6 @@ let g:ctrlp_max_height = 15
 NeoBundle 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 3
-
-if filereadable(expand("~/.vim/vimrc.bundles.neocomplete"))
-  source ~/.vim/vimrc.bundles.neocomplete
-endif
 
 " Colors
 NeoBundle 'candycode.vim'
@@ -74,20 +77,3 @@ NeoBundleLazy 'slim-template/vim-slim',          {'autoload' : {'filetypes' : ['
 
 filetype plugin indent on
 NeoBundleCheck
-
-" 'ctagsargs' : '--include-vars',
-if executable('coffeetags')
-  let g:tagbar_type_coffee = {
-        \ 'ctagsbin' : 'coffeetags',
-        \ 'ctagsargs' : '',
-        \ 'kinds' : [
-        \ 'f:functions',
-        \ 'o:object',
-        \ ],
-        \ 'sro' : ".",
-        \ 'kind2scope' : {
-        \ 'f' : 'object',
-        \ 'o' : 'object',
-        \ }
-        \ }
-endif
