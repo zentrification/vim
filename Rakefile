@@ -35,6 +35,13 @@ namespace :vim do
   end
 end
 
+namespace :tern do
+  desc 'install tern (requires node)'
+  task :install do
+    sh "cd ~/.vim/bundle/tern_for_vim && sudo npm install"
+  end
+end
+
 task :default do
   sh "rake -T"
 end
