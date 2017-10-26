@@ -35,14 +35,7 @@ Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'mhinz/vim-startify'
 
 " themes
-Plug 'candycode.vim'
-Plug 'tomasr/molokai'
-Plug 'w0ng/vim-hybrid'
-" explore customizing gruvbox
-Plug 'morhetz/gruvbox'
-Plug 'altercation/vim-colors-solarized'
-Plug 'chriskempson/tomorrow-theme', { 'rtp': 'vim' }
-Plug 'tpope/vim-vividchalk'
+Plug 'flazz/vim-colorschemes'
 
 call plug#end()
 
